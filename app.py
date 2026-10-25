@@ -837,11 +837,17 @@ FAM = [('Nasdaq-100', r'nasdaq[- ]?100(?!.{0,20}tech)|nasdaq 100'), ('S&P 500', 
        ('World / all-country', r'all[- ]world|acwi|all country|msci world|ftse global all|global equity index|(all[- ]equity|core equity|growth) etf portfolio|all-in-one|equity etf portfolio'),
        ('US large/mid broad', r'large (and|&) mid[- ]cap (us|u\.s\.) equities|large cap us equities|us equity index|u\.s\. equity index'),
        ('Canada broad', r'large (and|&) mid[- ]cap canadian equities|large cap canadian equities')]
-INC_RX = re.compile(r'covered call|enhanced yield|premium yield|option|income|yield|dividend|distribution', re.I)
+OPT_RX = re.compile(r'covered call|call[- ]writing|option[- ]writing|options? (income|strategy|overlay)|premium (yield|income)|enhanced yield|buy[- ]?write|put[- ]writ|yield maximizer|\bmax(imum)? (income|yield)|\b[A-Z]?MAX\b|\bcall\b|\bpremium\b|ultra ?yield|autocallable|structured equity yield|enhanced (equity )?income|^harvest .*income|^purpose .*equity income', re.I)  # issuer families whose Income/UltraYield funds write options per their stated strategy
+DIV_RX = re.compile(r'dividend|high yield|yield|income|aristocrat|distribution', re.I)
+INC_RX = OPT_RX
 SECT_RX = re.compile(r'\b(banks?|financials?|technology|tech|health ?care|healthcare|utilit(y|ies)|real estate|reits?|telecom|communication|consumer|industrials?|semiconductors?|biotech|cyber|cloud|artificial intelligence|ai|robotics|infrastructure|insurance|pipelines?|clean energy|innovation|fintech|gaming|cannabis|water|defen[cs]e|aerospace|transport|energy|materials|software|internet|genomics|esports|metaverse)\b', re.I)
-CATS = [('A', 'Core broad-market index'), ('B', 'Income (broad-index / multi-sector)'), ('C', 'Commodities & resources'), ('D', 'Bitcoin (spot only) - HIGH RISK'), ('S', 'Single-sector (deprioritized)')]
+CATS = [('A', 'Core broad-market index'), ('B', 'Income: option-writing / covered call (broad index / multi-sector)'), ('C', 'Commodities & resources'), ('D', 'Bitcoin (spot only) - HIGH RISK'), ('E', 'Cash & cash equivalents (HISA, money market, ultra-short T-bill)'), ('S', 'Single-sector (deprioritized)')]
 DEFW = {'A': dict(perf=40, fee=35, yld=0, aum=15, track=10), 'B': dict(perf=30, fee=20, yld=35, aum=10, track=5), 'C': dict(perf=40, fee=30, yld=0, aum=20, track=10),
-        'D': dict(perf=30, fee=50, yld=0, aum=15, track=5), 'S': dict(perf=40, fee=35, yld=0, aum=15, track=10)}
+        'D': dict(perf=30, fee=50, yld=0, aum=15, track=5), 'S': dict(perf=40, fee=35, yld=0, aum=15, track=10),
+        'E': dict(vol=30, yld=30, fee=25, cons=10, aum=3, track=2, perf=0)}
+for _c in DEFW: DEFW[_c].setdefault('vol', 0); DEFW[_c].setdefault('cons', 0)
+CASH_RX = re.compile(r'high interest savings|\bsavings\b|money market|t-?bill|treasury bill|cash management|premium cash|\bcash (maximizer|etf|account)|0-3 month|cash maximizer|\bcash fund\b|ultra[- ]short[- ]term (government|treasury|t-bill)', re.I)
+CASH_BAD = re.compile(r'yield maximizer|premium yield|bond|corporate|credit|high yield|floating|mortgage|aggregate|income fund|covered|\b(1|2|3|5)-?\d* ?(year|yr)', re.I)
 def fnum(x):
     try: return float(x) if x not in ('', 'None', None) else None
     except ValueError: return None
@@ -856,6 +862,8 @@ def classify_ca(r):
     """-> (cat or 'X:<reason>', group, evidence)"""
     nm = r['name']; txt = ' '.join([nm, r['index'], r['exposure']]); fk = 'CA:' + r['ticker']
     ev = []; hv = None; sectors = None; topw = None
+    if CASH_RX.search(nm) and not CASH_BAD.search(nm) and 'Equity' not in r['asset_classes']:
+        return 'E', ('HISA' if re.search(r'savings|cash', nm, re.I) else ('Money market' if re.search('money market', nm, re.I) else 'T-bill')) + (' USD' if re.search(r'\bUSD\b|U\.S\.|\bUS\b', nm) or r['ticker'].endswith('.U') else ' CAD'), 'name: ' + CASH_RX.search(nm).group(0) + ' (no duration/credit keywords)'
     if VEC and VEC.ready.is_set() and fk in VEC.vec:
         hv = VEC.vec[fk]; inf = IDX.funds[fk]
         sw = defaultdict(float)
@@ -885,11 +893,15 @@ def classify_ca(r):
     fam = next((g for g, rx in FAM if re.search(rx, txt, re.I)), None)
     broad_h = sectors and sectors[0] >= 6 and sectors[2] < 0.5
     sect = SECT_RX.search(nm) or (not fam and sectors and sectors[2] >= 0.6)
-    if eq and INC_RX.search(nm) and (fam or broad_h) and not (not fam and sectors and sectors[2] >= 0.6) and not SECT_RX.search(nm):
-        return 'B', fam or 'Multi-sector', ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
+    otxt = ' '.join([nm, r['index'], r.get('description', '') or '', r.get('exposure', '') or ''])
+    if eq and (OPT_RX.search(nm) or OPT_RX.search(otxt)):  # option-writing / premium-income only
+        if sect: return 'S', (SECT_RX.search(nm).group(0).title() if SECT_RX.search(nm) else sectors[1]) + ' (covered call)', 'single-sector option-writing: ' + OPT_RX.search(otxt).group(0)
+        if fam or broad_h: return 'B', fam or 'Multi-sector', 'option-writing: ' + OPT_RX.search(otxt).group(0) + '; ' + ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
+    if eq and DIV_RX.search(nm) and not sect and (fam or broad_h):  # dividend-stock ETFs are passive core, not income
+        return 'A', (fam or 'Multi-sector') + ' (dividend)', 'dividend-stock ETF (no option writing) -> core; ' + ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
     if eq and fam and not sect: return 'A', fam, 'index family match' + ('; ' + ev[0] if ev else '')
     if eq and sect: return 'S', (SECT_RX.search(nm).group(0).title() if SECT_RX.search(nm) else sectors[1]), ('name: ' + SECT_RX.search(nm).group(0) if SECT_RX.search(nm) else ev[0])
-    return 'X:other (not in A-D: bonds, balanced, thematic/unclassified)', '', ''
+    return 'X:other (not in A-E: bonds, balanced, thematic/unclassified)', '', ''
 
 def screener(weights=None):
     rows = scr_rows(); have = {r['ticker'] for r in rows}
@@ -915,7 +927,7 @@ def screener(weights=None):
                         td_pct=None if fnum(r['tracking_difference']) is None else 100 * fnum(r['tracking_difference']), te_pct=None if fnum(r['tracking_error']) is None else 100 * fnum(r['tracking_error']),
                         ret1y_pct=None if ann['1y'] is None else 100 * ann['1y'], ret3y_ann_pct=None if ann['3y'] is None else 100 * ann['3y'], ret5y_ann_pct=None if ann['5y'] is None else 100 * ann['5y'],
                         nav_aum_as_of=r['nav_aum_as_of'] or 'n/a', perf_as_of=r['perf_as_of'] or 'n/a', classified_by=ev, source=SCR_SRC, source_url=r['source_url'],
-                        holdings_in_index=('CA:' + t) in IDX.funds))
+                        holdings_in_index=('CA:' + t) in IDX.funds, vol_pct=fnum(r.get('vol_monthly_std')), neg_months=fnum(r.get('neg_months_12m'))))
     best = {}
     for d in out:
         d['ticker'] = d['ticker'].split(':')[-1]
@@ -952,7 +964,7 @@ def screener(weights=None):
     res = {}
     for c, lab in CATS:
         L = [d for d in out if d['category'] == c]
-        M = dict(perf=('perf_metric_pp', True), fee=('mer_pct', False), yld=('yield_pct', True), aum=('aum_cad', True), track=('years', True))
+        M = dict(perf=('perf_metric_pp', True), fee=('mer_pct', False), yld=('yield_pct', True), aum=('aum_cad', True), track=('years', True), vol=('vol_pct', False), cons=('neg_months', False))
         pools = {m: [d[f] for d in L if d[f] is not None] for m, (f, h) in M.items()}
         for d in L:
             num_, den = 0.0, 0.0
