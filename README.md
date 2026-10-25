@@ -2,6 +2,14 @@
 
 > **Disclaimer:** informational only — not investment, tax or financial advice. Holdings come from issuer websites, SEC N-PORT filings or Cboe Canada (labelled on every row, each with its own as-of date) and can be stale or incomplete.
 
+## Run with Docker (easiest)
+
+    git clone https://github.com/jiahualihuanahuan/portfolio-xray.git
+    cd portfolio-xray
+    docker compose up -d --build
+
+Then open http://localhost:8765/ (first load takes ~15 s while the index builds). Stop with `docker compose down`. After pulling new data: `git pull && docker compose up -d --build`.
+
 ## Install & run
 Unzip **both** `portfolio_xray_part1.zip` (app, Canadian holdings, screener data, samples) and `portfolio_xray_part2.zip` (US holdings) into the **same folder**; both extract into `portfolio_xray/`. The app stops with a clear message if a part is missing.
 

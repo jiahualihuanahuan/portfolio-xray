@@ -1120,7 +1120,7 @@ def write_rows(out, name, rows):
 def main():
     global IDX, VEC
     ap = argparse.ArgumentParser(description='Portfolio X-ray (local). ' + DISCLAIMER)
-    ap.add_argument('--port', type=int, default=8765); ap.add_argument('--no-browser', action='store_true')
+    ap.add_argument('--port', type=int, default=int(os.environ.get('PORT', 8765))); ap.add_argument('--host', default=os.environ.get('HOST', '127.0.0.1')); ap.add_argument('--no-browser', action='store_true')
     ap.add_argument('--cli', help='portfolio CSV/XLSX to analyze headless'); ap.add_argument('--out', default='xray_out')
     ap.add_argument('--usdcad', type=float); ap.add_argument('--no-fx-fetch', action='store_true'); ap.add_argument('--raw', action='store_true', help='do not normalize fund weights')
     ap.add_argument('--thresholds', help='JSON, e.g. {"stock":5,"sector":30,"country":60,"banks":15,"overlap":40,"equity":80,"fixed_income":20,"cash":0,"max_stock":5,"max_country":70,"max_sector":30}')
@@ -1198,8 +1198,8 @@ def main():
         book['disclaimer'] = [dict(disclaimer=DISCLAIMER)]
         if a.xlsx: open(os.path.join(a.out, 'portfolio_xray.xlsx'), 'wb').write(xlsx_bytes(book))
         print('Wrote', a.out); return
-    srv = ThreadingHTTPServer(('127.0.0.1', a.port), H)
-    url = 'http://127.0.0.1:%d/' % a.port; print('Open', url, flush=True)
+    srv = ThreadingHTTPServer((a.host, a.port), H)
+    url = 'http://%s:%d/' % ('127.0.0.1' if a.host in ('0.0.0.0', '') else a.host, a.port); print('Open', url, flush=True)
     if not a.no_browser: threading.Timer(0.5, lambda: webbrowser.open(url)).start()
     srv.serve_forever()
 
