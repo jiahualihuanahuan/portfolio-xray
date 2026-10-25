@@ -1,0 +1,12 @@
+type,msg,value_pct,threshold_pct
+single company,"NVIDIA Corp. is 6.5% of your portfolio (look-through, all funds + direct)",6.5300,5
+single company,"Apple, Inc. is 5.9% of your portfolio (look-through, all funds + direct)",5.8800,5
+single company,"Alphabet, Inc. is 5.1% of your portfolio (look-through, all funds + direct)",5.0700,5
+sector,Sector Information Technology is 40.9%,40.9400,30
+country,United States is 85.6% of the portfolio,85.6100,60
+fund overlap,VOO and VFV overlap 100% (sum of min weights),100.0000,40
+fund overlap,VOO and QQQ overlap 54% (sum of min weights),54.4600,40
+fund overlap,VOO and ZQQ overlap 53% (sum of min weights),52.8600,40
+fund overlap,VFV and QQQ overlap 54% (sum of min weights),54.4600,40
+fund overlap,VFV and ZQQ overlap 53% (sum of min weights),52.8600,40
+fund overlap,QQQ and ZQQ overlap 86% (sum of min weights),85.5100,40

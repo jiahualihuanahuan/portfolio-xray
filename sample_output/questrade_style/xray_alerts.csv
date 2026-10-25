@@ -1,0 +1,5 @@
+type,msg,value_pct,threshold_pct
+single company,"ROYAL BANK OF CANADA is 14.4% of your portfolio (look-through, all funds + direct)",14.3500,5
+single company,"SHOPIFY SUBORDINATE VOTING CLASS A is 7.3% of your portfolio (look-through, all funds + direct)",7.2700,5
+sector,Sector Financials is 40.5%,40.4800,30
+issuer group,Big-6 Canadian banks (equity) combined = 31.9%,31.9200,15

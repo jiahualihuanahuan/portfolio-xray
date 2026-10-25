@@ -1,0 +1,7 @@
+symbol,name,quantity,market_value,currency,fx,fx_source,value_cad,kind,resolved_as,notes
+XEQT,iShares Core Equity ETF Portfolio,300.00,10926.00,CAD,1.00,CAD (n/a),10926.00,fund,CA:XEQT,
+VEQT,Vanguard All-Equity ETF Portfolio,200.00,9620.00,CAD,1.00,CAD (n/a),9620.00,fund,CA:VEQT,
+QQQ,Invesco QQQ,5.00,3150.25,USD,1.40,manual (user-entered),4408.14,fund,US:QQQ,value = quantity x price
+TD,Toronto-Dominion Bank,50.00,5510.00,CAD,1.00,CAD (n/a),5510.00,stock,C:891160509,
+XYZQ,Unknown Corp,10.00,50.00,CAD,1.00,CAD (n/a),50.00,stock,T:CA:XYZQ,symbol not matched to any ISIN/CUSIP in our holdings data; shown as-is with no classification
+ABCD-T,Made-up ETF,10.00,,CAD,,,,stock,T:CA:ABCD,"symbol not matched to any ISIN/CUSIP in our holdings data; shown as-is with no classification; NO MARKET VALUE (only quantity, no price) - excluded, map a value or price column"

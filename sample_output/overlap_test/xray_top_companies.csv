@@ -1,0 +1,26 @@
+rank,company,tickers,sector,country,asset_classes,lines,value_cad,pct
+1,NVIDIA Corp.,NVDA,Information Technology,United States,Equity,1,5016.6113,6.5318
+2,"Apple, Inc.",AAPL,Information Technology,United States,Equity,1,4513.1568,5.8763
+3,"Alphabet, Inc.","GOOG, GOOGL",Communication Services,United States,Equity,2,3891.1217,5.0664
+4,Microsoft Corp.,MSFT,Information Technology,United States,Equity,1,3047.7606,3.9683
+5,"Amazon.com, Inc.",AMZN,Consumer Discretionary,United States,Equity,1,2507.7144,3.2651
+6,"Micron Technology, Inc.",MU,Information Technology,United States,Equity,1,2066.0857,2.6901
+7,"Broadcom, Inc.",AVGO,Information Technology,United States,Equity,1,1785.7450,2.3251
+8,"Advanced Micro Devices, Inc.",AMD,Information Technology,United States,Equity,1,1568.6398,2.0424
+9,"Tesla, Inc.",TSLA,Consumer Discretionary,United States,Equity,1,1551.3646,2.0199
+10,"Meta Platforms, Inc.",META,Communication Services,United States,Equity,1,1487.8346,1.9372
+11,Intel Corp.,INTC,Information Technology,United States,Equity,1,1049.6847,1.3667
+12,"Walmart, Inc.",WMT,Consumer Staples,United States,Equity,1,935.0022,1.2174
+13,"Applied Materials, Inc.",AMAT,Information Technology,United States,Equity,1,843.4942,1.0983
+14,Lam Research Corp.,LRCX,Information Technology,United States,Equity,1,800.2935,1.0420
+15,"Cisco Systems, Inc.",CSCO,Information Technology,United States,Equity,1,772.1425,1.0054
+16,Costco Wholesale Corp.,COST,Consumer Staples,United States,Equity,1,733.1450,0.9546
+17,Eli Lilly & Co.,,Health Care,United States,Equity,1,596.7648,0.7770
+18,"Berkshire Hathaway, Inc.",,Financials,United States,Equity,1,576.9127,0.7512
+19,KLA Corp.,KLAC,Information Technology,United States,Equity,1,573.7267,0.7470
+20,"Palantir Technologies, Inc.",PLTR,Information Technology,United States,Equity,1,556.6032,0.7247
+21,JPMorgan Chase & Co.,,Financials,United States,Equity,1,516.8418,0.6729
+22,"Netflix, Inc.",NFLX,Communication Services,United States,Equity,1,505.9526,0.6588
+23,Sandisk Corp.,SNDK,Information Technology,United States,Equity,1,499.9971,0.6510
+24,"Palo Alto Networks, Inc.",PANW,Information Technology,United States,Equity,1,484.0146,0.6302
+25,"Texas Instruments, Inc.",TXN,Information Technology,United States,Equity,1,458.7139,0.5973

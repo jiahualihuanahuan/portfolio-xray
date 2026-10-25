@@ -1,0 +1,26 @@
+rank,security,ticker,key,match,sector,country,value_cad,pct
+1,NVIDIA Corp.,NVDA,C:67066G104,ID (CUSIP/ISIN),Information Technology,United States,5016.6113,6.5318
+2,"Apple, Inc.",AAPL,C:037833100,ID (CUSIP/ISIN),Information Technology,United States,4513.1568,5.8763
+3,Microsoft Corp.,MSFT,C:594918104,ID (CUSIP/ISIN),Information Technology,United States,3047.7606,3.9683
+4,"Amazon.com, Inc.",AMZN,C:023135106,ID (CUSIP/ISIN),Consumer Discretionary,United States,2507.7144,3.2651
+5,"Alphabet, Inc.",GOOGL,C:02079K305,ID (CUSIP/ISIN),Communication Services,United States,2107.0643,2.7435
+6,"Micron Technology, Inc.",MU,C:595112103,ID (CUSIP/ISIN),Information Technology,United States,2066.0857,2.6901
+7,"Broadcom, Inc.",AVGO,C:11135F101,ID (CUSIP/ISIN),Information Technology,United States,1785.7450,2.3251
+8,"Alphabet, Inc.",GOOG,C:02079K107,ID (CUSIP/ISIN),Communication Services,United States,1784.0574,2.3229
+9,"Advanced Micro Devices, Inc.",AMD,C:007903107,ID (CUSIP/ISIN),Information Technology,United States,1568.6398,2.0424
+10,"Tesla, Inc.",TSLA,C:88160R101,ID (CUSIP/ISIN),Consumer Discretionary,United States,1551.3646,2.0199
+11,"Meta Platforms, Inc.",META,C:30303M102,ID (CUSIP/ISIN),Communication Services,United States,1487.8346,1.9372
+12,Intel Corp.,INTC,C:458140100,ID (CUSIP/ISIN),Information Technology,United States,1049.6847,1.3667
+13,"Walmart, Inc.",WMT,C:931142103,ID (CUSIP/ISIN),Consumer Staples,United States,935.0022,1.2174
+14,"Applied Materials, Inc.",AMAT,C:038222105,ID (CUSIP/ISIN),Information Technology,United States,843.4942,1.0983
+15,Lam Research Corp.,LRCX,C:512807306,ID (CUSIP/ISIN),Information Technology,United States,800.2935,1.0420
+16,"Cisco Systems, Inc.",CSCO,C:17275R102,ID (CUSIP/ISIN),Information Technology,United States,772.1425,1.0054
+17,Costco Wholesale Corp.,COST,C:22160K105,ID (CUSIP/ISIN),Consumer Staples,United States,733.1450,0.9546
+18,Eli Lilly & Co.,,C:532457108,ID (CUSIP/ISIN),Health Care,United States,596.7648,0.7770
+19,"Berkshire Hathaway, Inc.",,C:084670702,ID (CUSIP/ISIN),Financials,United States,576.9127,0.7512
+20,KLA Corp.,KLAC,C:482480100,ID (CUSIP/ISIN),Information Technology,United States,573.7267,0.7470
+21,"Palantir Technologies, Inc.",PLTR,C:69608A108,ID (CUSIP/ISIN),Information Technology,United States,556.6032,0.7247
+22,JPMorgan Chase & Co.,,C:46625H100,ID (CUSIP/ISIN),Financials,United States,516.8418,0.6729
+23,"Netflix, Inc.",NFLX,C:64110L106,ID (CUSIP/ISIN),Communication Services,United States,505.9526,0.6588
+24,Sandisk Corp.,SNDK,C:80004C200,ID (CUSIP/ISIN),Information Technology,United States,499.9971,0.6510
+25,"Palo Alto Networks, Inc.",PANW,C:697435105,ID (CUSIP/ISIN),Information Technology,United States,484.0146,0.6302

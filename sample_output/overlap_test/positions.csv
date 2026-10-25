@@ -1,0 +1,6 @@
+symbol,name,quantity,market_value,currency,fx,fx_source,value_cad,kind,resolved_as,notes
+XEQT,iShares Core Equity ETF Portfolio,500.00,18210.00,CAD,1.00,CAD (n/a),18210.00,fund,CA:XEQT,
+VFV,Vanguard S&P 500 Index ETF,100.00,15820.00,CAD,1.00,CAD (n/a),15820.00,fund,CA:VFV,
+VOO,Vanguard S&P 500 ETF,20.00,12540.60,USD,1.40,manual (user-entered),17548.06,fund,US:VOO,
+QQQ,Invesco QQQ Trust,15.00,9450.75,USD,1.40,manual (user-entered),13224.43,fund,US:QQQ,
+ZQQ,BMO Nasdaq 100 Equity Hedged to CAD Index ETF,80.00,12000.00,CAD,1.00,CAD (n/a),12000.00,fund,CA:ZQQ,

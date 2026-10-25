@@ -1,0 +1,5 @@
+item,kind,actual_pct,target_pct,gap_cad,status
+Equity,asset class target,97.5800,,,
+Fixed Income,asset class target,0.0000,,,
+Cash & Equivalents,asset class target,0.0000,,,
+Other / unclassified,info,2.4200,,,"includes Undisclosed, opaque funds, derivatives, real estate etc."

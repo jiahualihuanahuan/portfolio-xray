@@ -1,0 +1,5 @@
+fund,issuer,source,as_of,n_holdings,raw_weight_sum,scope,partial,exposure_cad,url,reached_via
+US:SPY,spdr,ssga.com daily holdings,2026-10-22,505,100.22,full,False,19101.00,https://www.ssga.com/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx,US:SPY
+US:QQQ,invesco,SEC EDGAR N-PORT,2026-06-30,105,100.282,SEC N-PORT quarter-end (full),False,13224.43,https://www.sec.gov/Archives/edgar/data/1067839/000106783926000030/primary_doc.xml,US:QQQ
+US:VOO,vanguard,SEC EDGAR N-PORT,2026-06-30,520,100.094,SEC N-PORT quarter-end (full),False,8774.03,https://www.sec.gov/Archives/edgar/data/36405/000003640526000473/primary_doc.xml,US:VOO
+CA:HXS,globalx,globalx site,2026-09-30,10,40.57,partial: top holdings only (site publishes top 10),True,979.51,https://www.globalx.ca/product/hxs,CA:HXS

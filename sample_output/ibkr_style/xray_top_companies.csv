@@ -1,0 +1,26 @@
+rank,company,tickers,sector,country,asset_classes,lines,value_cad,pct
+1,APPLE INC,AAPL,Information Technology,United States,Equity,1,13910.3234,21.3135
+2,NVIDIA CORP,NVDA,Information Technology,United States,Equity,1,9731.4072,14.9105
+3,MICROSOFT CORP,MSFT,Information Technology,United States,Equity,1,7888.2512,12.0864
+4,ALPHABET INC CL A,"GOOG, GOOGL",Communication Services,United States,Equity,2,2330.3003,3.5705
+5,AMAZON.COM INC,AMZN,Consumer Discretionary,United States,Equity,1,1593.1334,2.4410
+6,MICRON TECHNOLOGY INC,MU,Information Technology,United States,Equity,1,1217.4386,1.8654
+7,BROADCOM INC,AVGO,Information Technology,United States,Equity,1,1082.2309,1.6582
+8,META PLATFORMS INC CLASS A,META,Communication Services,United States,Equity,1,949.9779,1.4556
+9,ADVANCED MICRO DEVICES,AMD,Information Technology,United States,Equity,1,923.8707,1.4156
+10,TESLA INC,TSLA,Consumer Discretionary,United States,Equity,1,915.2068,1.4023
+11,INTEL CORP,INTC,Information Technology,United States,Equity,1,613.1121,0.9394
+12,WALMART INC,WMT,Consumer Staples,United States,Equity,1,538.8650,0.8257
+13,APPLIED MATERIALS INC,AMAT,Information Technology,United States,Equity,1,491.9331,0.7537
+14,LAM RESEARCH CORP,LRCX,Information Technology,United States,Equity,1,466.3101,0.7145
+15,CISCO SYSTEMS INC,CSCO,Information Technology,United States,Equity,1,446.8218,0.6846
+16,ELI LILLY + CO,LLY,Health Care,United States,Equity,1,430.7263,0.6600
+17,COSTCO WHOLESALE CORP,COST,Consumer Staples,United States,Equity,1,423.7937,0.6493
+18,BERKSHIRE HATHAWAY INC CL B,BRK.B,Financials,United States,Equity,1,418.6932,0.6415
+19,JPMORGAN CHASE + CO,JPM,Financials,United States,Equity,1,368.2661,0.5643
+20,KLA CORP,KLAC,Information Technology,United States,Equity,1,334.3782,0.5123
+21,PALANTIR TECHNOLOGIES INC A,PLTR,Information Technology,United States,Equity,1,319.7117,0.4899
+22,NETFLIX INC,NFLX,Communication Services,United States,Equity,1,293.1876,0.4492
+23,SANDISK CORP,SNDK,Information Technology,United States,Equity,1,291.1554,0.4461
+24,PALO ALTO NETWORKS INC,PANW,Information Technology,United States,Equity,1,280.0429,0.4291
+25,VISA INC CLASS A SHARES,V,Financials,United States,Equity,1,279.6511,0.4285

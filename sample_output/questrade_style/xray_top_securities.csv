@@ -1,0 +1,26 @@
+rank,security,ticker,key,match,sector,country,value_cad,pct
+1,ROYAL BANK OF CANADA,RY,C:780087102,ID (CUSIP/ISIN),Financials,Canada,11244.3001,14.3514
+2,SHOPIFY SUBORDINATE VOTING CLASS A,SHOP,C:82509L107,ID (CUSIP/ISIN),Information Technology,Canada,5693.3139,7.2665
+3,TORONTO DOMINION,TD,C:891160509,ID (CUSIP/ISIN),Financials,Canada,3055.1846,3.8994
+4,BANK OF NOVA SCOTIA,BNS,C:064149107,ID (CUSIP/ISIN),Financials,Canada,2774.6659,3.5414
+5,BANK OF MONTREAL,BMO,C:063671101,ID (CUSIP/ISIN),Financials,Canada,2723.7996,3.4765
+6,CANADIAN IMPERIAL BANK OF COMMERCE,CM,C:136069101,ID (CUSIP/ISIN),Financials,Canada,2707.7131,3.4559
+7,National Bank of Canada,,C:633067103,ID (CUSIP/ISIN),Financials,Canada,2383.5886,3.0422
+8,NVIDIA Corp.,,C:67066G104,ID (CUSIP/ISIN),Information Technology,United States,2348.2538,2.9971
+9,"Apple, Inc.",,C:037833100,ID (CUSIP/ISIN),Information Technology,United States,2059.3884,2.6284
+10,Microsoft Corp.,,C:594918104,ID (CUSIP/ISIN),Information Technology,United States,1342.6109,1.7136
+11,"Amazon.com, Inc.",,C:023135106,ID (CUSIP/ISIN),Consumer Discretionary,United States,1130.5939,1.4430
+12,"Alphabet, Inc.",,C:02079K305,ID (CUSIP/ISIN),Communication Services,United States,1015.0893,1.2956
+13,"Broadcom, Inc.",,C:11135F101,ID (CUSIP/ISIN),Information Technology,United States,866.6736,1.1062
+14,"Alphabet, Inc.",,C:02079K107,ID (CUSIP/ISIN),Communication Services,United States,809.5569,1.0333
+15,"Micron Technology, Inc.",,C:595112103,ID (CUSIP/ISIN),Information Technology,United States,630.8055,0.8051
+16,"Meta Platforms, Inc.",,C:30303M102,ID (CUSIP/ISIN),Communication Services,United States,599.4286,0.7651
+17,"Tesla, Inc.",,C:88160R101,ID (CUSIP/ISIN),Consumer Discretionary,United States,573.8593,0.7324
+18,Eli Lilly & Co.,,C:532457108,ID (CUSIP/ISIN),Health Care,United States,459.7586,0.5868
+19,"Advanced Micro Devices, Inc.",,C:007903107,ID (CUSIP/ISIN),Information Technology,United States,459.0176,0.5859
+20,"Berkshire Hathaway, Inc.",,C:084670702,ID (CUSIP/ISIN),Financials,United States,444.3997,0.5672
+21,JPMorgan Chase & Co.,,C:46625H100,ID (CUSIP/ISIN),Financials,United States,405.1313,0.5171
+22,Intel Corp.,,C:458140100,ID (CUSIP/ISIN),Information Technology,United States,319.6860,0.4080
+23,Johnson & Johnson,,C:478160104,ID (CUSIP/ISIN),Health Care,United States,296.1407,0.3780
+24,"Applied Materials, Inc.",,C:038222105,ID (CUSIP/ISIN),Information Technology,United States,278.0320,0.3549
+25,Exxon Mobil Corp.,,C:30231G102,ID (CUSIP/ISIN),Fixed Income,United States,274.5453,0.3504

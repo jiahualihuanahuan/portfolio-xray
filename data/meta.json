@@ -1,0 +1,15 @@
+{
+ "built": "2026-10-24T22:31",
+ "rows": 1388132,
+ "funds_CA": 1870,
+ "funds_US": 2555,
+ "universe_CA": 2113,
+ "universe_US": 2718,
+ "partial": 518,
+ "holdings_parts": [
+  "holdings_CA.csv.gz",
+  "holdings_US.csv.gz"
+ ],
+ "prior_snapshot_rows": 3362,
+ "prior_snapshot_funds": 48
+}

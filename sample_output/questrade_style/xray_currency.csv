@@ -1,0 +1,43 @@
+currency,value_cad,pct,method
+CAD,38646.5925,49.3256,security currency in holdings file 100%; cash currency 0%
+USD,33618.8344,42.9085,security currency in holdings file 100%; cash currency 0%
+EUR,1899.6792,2.4246,security currency in holdings file 100%; cash currency 0%
+JPY,1864.8603,2.3802,security currency in holdings file 99%; cash currency 1%
+GBP,583.7674,0.7451,security currency in holdings file 100%; cash currency 0%
+AUD,453.9717,0.5794,security currency in holdings file 100%; cash currency 0%
+CHF,346.9566,0.4428,security currency in holdings file 98%; cash currency 2%
+HKD,204.3794,0.2609,security currency in holdings file 99%; cash currency 1%
+TWD,127.7775,0.1631,security currency in holdings file 99%; cash currency 1%
+KRW,90.4574,0.1155,security currency in holdings file 97%; cash currency 3%
+ILS,87.7701,0.1120,security currency in holdings file 100%; cash currency 0%
+NOK,64.1902,0.0819,security currency in holdings file 100%; cash currency 0%
+DKK,62.4528,0.0797,security currency in holdings file 99%; cash currency 1%
+SEK,55.2658,0.0705,security currency in holdings file 99%; cash currency 1%
+BRL,41.8952,0.0535,security currency in holdings file 99%; cash currency 1%
+INR,34.5497,0.0441,security currency in holdings file 100%; cash currency 0%
+ZAR,29.5366,0.0377,security currency in holdings file 98%; cash currency 2%
+CNY,24.5865,0.0314,security currency in holdings file 100%
+MXN,21.1049,0.0269,security currency in holdings file 100%; cash currency 0%
+NZD,15.9880,0.0204,security currency in holdings file 100%; cash currency 0%
+PLN,14.5491,0.0186,security currency in holdings file 100%; cash currency 0%
+AED,10.0009,0.0128,security currency in holdings file 100%; cash currency 0%
+KWD,7.6991,0.0098,security currency in holdings file 100%; cash currency 0%
+SGD,7.0388,0.0090,security currency in holdings file 100%; cash currency 0%
+IDR,6.1359,0.0078,security currency in holdings file 100%; cash currency 0%
+QAR,5.7058,0.0073,security currency in holdings file 100%; cash currency 0%
+MYR,5.3139,0.0068,security currency in holdings file 97%; cash currency 3%
+HUF,3.7093,0.0047,security currency in holdings file 100%; cash currency 0%
+PHP,3.5672,0.0046,security currency in holdings file 100%; cash currency 0%
+CLP,2.8660,0.0037,security currency in holdings file 100%; cash currency 0%
+COP,2.4235,0.0031,security currency in holdings file 100%; cash currency 0%
+SAR,2.1206,0.0027,security currency in holdings file 87%; cash currency 13%
+BPSFT,1.4969,0.0019,cash currency 100%
+CZK,1.1420,0.0015,security currency in holdings file 100%; cash currency 0%
+MLPFT,0.7959,0.0010,cash currency 100%
+EGP,0.5724,0.0007,security currency in holdings file 100%; cash currency 0%
+CNH,0.1420,0.0002,cash currency 100%
+THB,0.0583,0.0001,security currency in holdings file 100%; cash currency 0%
+TRY,0.0291,0.0000,security currency in holdings file 100%; cash currency 0%
+RESIDUAL,0.0171,0.0000,security currency in holdings file 100%
+RUB,0.0000,0.0000,security currency in holdings file 100%
+PEN,0.0000,0.0000,

@@ -1,0 +1,12 @@
+fund,issuer,source,as_of,n_holdings,raw_weight_sum,scope,partial,exposure_cad,url,reached_via
+CA:XEQT,ishares,ishares site,2026-10-22,7,99.99,full,False,30957.00,https://www.blackrock.com/ca/investors/en/products/309480/ishares-core-equity-etf-portfolio/1464253357814.ajax?fileType=csv&fileName=XEQT_holdings&dataType=fund,CA:XEQT
+CA:VFV,vanguard,vanguard site,2026-09-30,1,99.768,full (direct; look-through),False,18984.00,https://www.vanguard.ca/en/product/etf/equity/9563/x,CA:VFV
+US:VOO,vanguard,SEC EDGAR N-PORT,2026-06-30,520,100.094,SEC N-PORT quarter-end (full),False,18983.99,https://www.sec.gov/Archives/edgar/data/36405/000003640526000473/primary_doc.xml,CA:VFV > US:VOO
+CA:ZEB,bmo,bmo site,2026-10-22,7,100.01,full,False,14955.00,https://www.bmogam.com/ca-en/products/exchange-traded-fund/bmo-equal-weight-banks-index-etf-zeb/,CA:ZEB
+US:ITOT,ishares,SEC EDGAR N-PORT,2026-06-30,2503,101.483,SEC N-PORT quarter-end (full),False,14137.95,https://www.sec.gov/Archives/edgar/data/1100663/000207169126019750/primary_doc.xml,CA:XEQT > CA:XTOT > US:ITOT | CA:XEQT > US:ITOT
+CA:XTOT,ishares,ishares site,2026-10-22,3,100.01,full,False,9653.36,https://www.blackrock.com/ca/investors/en/products/343519/ishares-core-s-p-total-u-s-stock-market-index-etf/1464253357814.ajax?fileType=csv&fileName=XTOT_holdings&dataType=fund,CA:XEQT > CA:XTOT
+CA:XIC,ishares,ishares site,2026-10-22,221,100.05,full,False,7962.94,https://www.blackrock.com/ca/investors/en/products/239837/ishares-sptsx-capped-composite-index-etf/1464253357814.ajax?fileType=csv&fileName=XIC_holdings&dataType=fund,CA:XEQT > CA:XIC
+CA:XEF,ishares,ishares site,2026-10-22,2481,99.11,full,False,7418.04,https://www.blackrock.com/ca/investors/en/products/251421/ishares-msci-eafe-imi-index-etf/1464253357814.ajax?fileType=csv&fileName=XEF_holdings&dataType=fund,CA:XEQT > CA:XEF
+CA:XEC,ishares,ishares site,2026-10-22,2947,98.32,full,False,1396.30,https://www.blackrock.com/ca/investors/en/products/251423/ishares-msci-emerging-markets-imi-index-etf/1464253357814.ajax?fileType=csv&fileName=XEC_holdings&dataType=fund,CA:XEQT > CA:XEC
+US:IEFA,ishares,SEC EDGAR N-PORT,2026-07-31,2632,100.801,SEC N-PORT quarter-end (full),False,63.62,https://www.sec.gov/Archives/edgar/data/1100663/000100472626008816/primary_doc.xml,CA:XEQT > CA:XEF > US:IEFA
+US:IEMG,ishares,SEC EDGAR N-PORT,2026-08-31,2936,104.891,SEC N-PORT quarter-end (full),False,5.40,https://www.sec.gov/Archives/edgar/data/930667/000100472626010071/primary_doc.xml,CA:XEQT > CA:XEC > US:IEMG

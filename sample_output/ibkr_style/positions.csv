@@ -1,0 +1,8 @@
+symbol,name,quantity,market_value,currency,fx,fx_source,value_cad,kind,resolved_as,notes
+SPY,,20.00,13650.40,USD,1.40,manual (user-entered),19101.00,fund,US:SPY,
+QQQ,,15.00,9450.75,USD,1.40,manual (user-entered),13224.43,fund,US:QQQ,
+VOO,,10.00,6270.30,USD,1.40,manual (user-entered),8774.03,fund,US:VOO,
+AAPL,,30.00,7800.00,USD,1.40,manual (user-entered),10914.54,stock,C:037833100,
+NVDA,,25.00,4650.00,USD,1.40,manual (user-entered),6506.74,stock,C:67066G104,
+MSFT,,8.00,4120.00,USD,1.40,manual (user-entered),5765.12,stock,C:594918104,
+HXS-U,,10.00,700.00,USD,1.40,manual (user-entered),979.51,fund,CA:HXS,holdings of HXS used for HXS.U listing

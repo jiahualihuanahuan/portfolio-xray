@@ -1,0 +1,11 @@
+fund,market,ticker,name,issuer,source,as_of,coverage,partial,url,mer,mer_source,overlap_pct
+US:VOO,US,VOO,VANGUARD 500 INDEX FUND,vanguard,SEC EDGAR N-PORT,2026-06-30,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/36405/000003640526000473/primary_doc.xml,,not in our data,100.0000
+US:IVV,US,IVV,iShares Core S&P 500 ETF,ishares,SEC EDGAR N-PORT,2026-06-30,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1100663/000207169126019760/primary_doc.xml,,not in our data,96.6800
+US:VV,US,VV,VANGUARD LARGE-CAP INDEX FUND,vanguard,SEC EDGAR N-PORT,2026-06-30,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/36405/000003640526000477/primary_doc.xml,,not in our data,96.3700
+US:FB,US,FB,ProShares S&P 500 Dynamic Buffer ETF,proshares,SEC EDGAR N-PORT,2026-05-31,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1174610/000207169126017413/primary_doc.xml,,not in our data,94.4900
+US:PBP,US,PBP,Invesco S&P 500 BuyWrite ETF,invesco,SEC EDGAR N-PORT,2026-07-31,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1209466/000120946626001440/primary_doc.xml,,not in our data,94.4300
+US:XYLD,US,XYLD,Global X S&P 500 Covered Call ETF,globalx,SEC EDGAR N-PORT,2026-07-31,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1432353/000204825126008631/primary_doc.xml,,not in our data,94.3600
+US:USPX,US,USPX,Franklin U.S. Equity Index ETF,franklin,SEC EDGAR N-PORT,2026-06-30,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1655589/000094040026035112/primary_doc.xml,,not in our data,94.3400
+US:XRMI,US,XRMI,Global X S&P 500 Risk Managed Income ETF,globalx,SEC EDGAR N-PORT,2026-07-31,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1432353/000204825126008622/primary_doc.xml,,not in our data,94.2800
+US:XYLG,US,XYLG,Global X S&P 500 Covered Call & Growth ETF,globalx,SEC EDGAR N-PORT,2026-07-31,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1432353/000204825126008621/primary_doc.xml,,not in our data,94.1200
+US:XTR,US,XTR,Global X S&P 500 Tail Risk ETF,globalx,SEC EDGAR N-PORT,2026-07-31,SEC N-PORT quarter-end (full),False,https://www.sec.gov/Archives/edgar/data/1432353/000204825126008604/primary_doc.xml,,not in our data,93.8000

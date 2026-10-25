@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+xray_out/
+lookthrough_out/
+results/
+.DS_Store

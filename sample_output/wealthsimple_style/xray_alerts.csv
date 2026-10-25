@@ -1,0 +1,5 @@
+type,msg,value_pct,threshold_pct
+single company,"TORONTO DOMINION is 19.1% of your portfolio (look-through, all funds + direct)",19.1000,5
+sector,Sector Financials is 32.1%,32.1400,30
+issuer group,Big-6 Canadian banks (equity) combined = 22.6%,22.5800,15
+fund overlap,XEQT and VEQT overlap 85% (sum of min weights),85.3400,40

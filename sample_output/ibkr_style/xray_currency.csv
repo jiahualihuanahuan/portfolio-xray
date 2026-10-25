@@ -1,0 +1,4 @@
+currency,value_cad,pct,method
+USD,64683.3026,99.1081,security currency in holdings file 100%; inferred from country 0%
+Unknown,582.1228,0.8919,no currency/country data 100%
+RESIDUAL,-0.0444,-0.0001,security currency in holdings file 100%

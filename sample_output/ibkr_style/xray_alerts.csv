@@ -1,0 +1,9 @@
+type,msg,value_pct,threshold_pct
+single company,"APPLE INC is 21.3% of your portfolio (look-through, all funds + direct)",21.3100,5
+single company,"NVIDIA CORP is 14.9% of your portfolio (look-through, all funds + direct)",14.9100,5
+single company,"MICROSOFT CORP is 12.1% of your portfolio (look-through, all funds + direct)",12.0900,5
+sector,Sector Information Technology is 64.2%,64.2000,30
+country,United States is 97.7% of the portfolio,97.6900,60
+fund overlap,SPY and QQQ overlap 50% (sum of min weights),50.1300,40
+fund overlap,SPY and VOO overlap 88% (sum of min weights),88.1600,40
+fund overlap,QQQ and VOO overlap 54% (sum of min weights),54.4600,40

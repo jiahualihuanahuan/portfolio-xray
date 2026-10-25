@@ -1,0 +1,224 @@
+fund,holding,prior_as_of,prior_list,prior_weight,current_as_of,current_list,current_weight,change_pp
+CA:QBTL,Dow Jones US Thematic Low Beta TRS,2026-09-30,issuer page: top 10 holdings,24.4000,2026-10-21,issuer full holdings file,0.0700,-24.3300
+CA:QBTL,F5 Inc.,2026-09-30,issuer page: top 10 holdings,0.5100,2026-10-21,issuer full holdings file,0.4800,-0.0300
+CA:QBTL,Cloudflare Inc.,2026-09-30,issuer page: top 10 holdings,0.4700,2026-10-21,issuer full holdings file,0.3900,-0.0800
+CA:QBTL,Dynatrace Inc.,2026-09-30,issuer page: top 10 holdings,0.4600,2026-10-21,issuer full holdings file,0.4700,0.0100
+CA:QBTL,Deere & Co.,2026-09-30,issuer page: top 10 holdings,0.4600,2026-10-21,issuer full holdings file,0.4000,-0.0600
+CA:QBTL,White Mountains Insurance Group Ltd.,2026-09-30,issuer page: top 10 holdings,0.4600,2026-10-21,issuer full holdings file,0.4600,0.0000
+CA:QBTL,Zscaler Inc.,2026-09-30,issuer page: top 10 holdings,0.4500,2026-10-21,issuer full holdings file,0.4800,0.0300
+CA:QBTL,CNH Industrial NV,2026-09-30,issuer page: top 10 holdings,0.4300,2026-10-21,issuer full holdings file,0.3600,-0.0700
+CA:QBTL,MSC Industrial Direct Co. Inc.,2026-09-30,issuer page: top 10 holdings,0.4200,2026-10-21,issuer full holdings file,0.4200,0.0000
+CA:QBTL,AbbVie Inc.,2026-09-30,issuer page: top 10 holdings,0.4200,2026-10-21,issuer full holdings file,0.4200,0.0000
+CA:QIF,Iberdrola SA,2026-09-30,issuer page: top 10 holdings,5.5100,2026-10-21,issuer full holdings file,5.4800,-0.0300
+CA:QIF,Enbridge Inc.,2026-09-30,issuer page: top 10 holdings,4.8400,2026-10-21,issuer full holdings file,4.8000,-0.0400
+CA:QIF,Aena SME SA,2026-09-30,issuer page: top 10 holdings,4.5900,2026-10-21,issuer full holdings file,4.5100,-0.0800
+CA:QIF,NextEra Energy Inc.,2026-09-30,issuer page: top 10 holdings,3.2000,2026-10-21,issuer full holdings file,3.1800,-0.0200
+CA:QIF,Kinder Morgan Inc.,2026-09-30,issuer page: top 10 holdings,2.4300,2026-10-21,issuer full holdings file,2.6300,0.2000
+CA:QIF,Constellation Energy Corp.,2026-09-30,issuer page: top 10 holdings,2.4200,2026-10-21,issuer full holdings file,2.4700,0.0500
+CA:QIF,TC Energy Corp.,2026-09-30,issuer page: top 10 holdings,2.4100,2026-10-21,issuer full holdings file,2.7900,0.3800
+CA:QIF,Duke Energy Corp.,2026-09-30,issuer page: top 10 holdings,2.3700,2026-10-21,issuer full holdings file,2.7800,0.4100
+CA:QIF,Entergy Corp.,2026-09-30,issuer page: top 10 holdings,2.2100,2026-10-21,issuer full holdings file,2.2700,0.0600
+CA:QIF,Microsoft Corp.,2026-09-30,issuer page: top 10 holdings,2.2000,2026-10-21,issuer full holdings file,2.2000,0.0000
+CA:QEF,NVIDIA Corp.,2026-09-30,issuer page: top 10 holdings,6.2200,2026-10-21,issuer full holdings file,6.0500,-0.1700
+CA:QEF,Apple Inc.,2026-09-30,issuer page: top 10 holdings,5.0600,2026-10-21,issuer full holdings file,5.2300,0.1700
+CA:QEF,Microsoft Corp.,2026-09-30,issuer page: top 10 holdings,4.1300,2026-10-21,issuer full holdings file,4.3000,0.1700
+CA:QEF,Alphabet Inc.,2026-09-30,issuer page: top 10 holdings,4.0900,2026-10-21,issuer full holdings file,1.3500,-2.7400
+CA:QEF,Taiwan Semiconductor Manufacturing Co. Ltd.,2026-09-30,issuer page: top 10 holdings,2.9300,2026-10-21,issuer full holdings file,2.4000,-0.5300
+CA:QEF,Amazon.com Inc.,2026-09-30,issuer page: top 10 holdings,2.3900,2026-10-21,issuer full holdings file,2.8800,0.4900
+CA:QEF,Broadcom Inc.,2026-09-30,issuer page: top 10 holdings,1.9800,2026-10-21,issuer full holdings file,1.9100,-0.0700
+CA:QEF,SK Hynix Inc.,2026-09-30,issuer page: top 10 holdings,1.5800,2026-10-21,issuer full holdings file,1.1800,-0.4000
+CA:QEF,Mastercard Inc.,2026-09-30,issuer page: top 10 holdings,1.3900,2026-10-21,issuer full holdings file,1.5700,0.1800
+CA:QEF,Eli Lilly and Co.,2026-09-30,issuer page: top 10 holdings,1.3000,2026-10-21,issuer full holdings file,1.4300,0.1300
+CA:AENP,Broadcom Inc.,2026-08-31,issuer full holdings file,3.4100,2026-09-30,issuer page: top 10 holdings,2.3900,-1.0200
+CA:AENP,Microsoft Corp.,2026-08-31,issuer full holdings file,2.4800,2026-09-30,issuer page: top 10 holdings,2.6900,0.2100
+CA:AENP,Apple Inc.,2026-08-31,issuer full holdings file,2.4600,2026-09-30,issuer page: top 10 holdings,2.6200,0.1600
+CA:AENP,NVIDIA Corp.,2026-08-31,issuer full holdings file,1.5100,2026-09-30,issuer page: top 10 holdings,2.0100,0.5000
+CA:AENP,Meta Platforms Inc.,2026-08-31,issuer full holdings file,1.2700,2026-09-30,issuer page: top 10 holdings,1.5200,0.2500
+CA:AENP,T Rowe Price Group Inc.,2026-08-31,issuer full holdings file,0.7600,2026-09-30,issuer page: top 10 holdings,1.2400,0.4800
+CA:AENP,Advanced Micro Devices Inc.,2026-08-31,issuer full holdings file,0.7000,2026-09-30,issuer page: top 10 holdings,1.3700,0.6700
+CA:AENP,The Home Depot Inc.,2026-08-31,issuer full holdings file,0.6400,2026-09-30,issuer page: top 10 holdings,1.8600,1.2200
+CA:AENP,Applied Materials Inc.,2026-08-31,issuer full holdings file,0.5700,2026-09-30,issuer page: top 10 holdings,1.3900,0.8200
+CA:AENP,Bank of America Corp.,2026-08-31,issuer full holdings file,0.3800,2026-09-30,issuer page: top 10 holdings,1.2900,0.9100
+CA:AGSL,NVIDIA Corp.,2026-08-31,issuer full holdings file,6.8300,2026-09-30,issuer page: top 10 holdings,7.1800,0.3500
+CA:AGSL,Amazon.com Inc.,2026-08-31,issuer full holdings file,5.0300,2026-09-30,issuer page: top 10 holdings,4.9100,-0.1200
+CA:AGSL,Eli Lilly and Co.,2026-08-31,issuer full holdings file,4.7500,2026-09-30,issuer page: top 10 holdings,4.8300,0.0800
+CA:AGSL,Microsoft Corp.,2026-08-31,issuer full holdings file,3.6600,2026-09-30,issuer page: top 10 holdings,4.7200,1.0600
+CA:AGSL,Alphabet Inc.,2026-08-31,issuer full holdings file,3.6200,2026-09-30,issuer page: top 10 holdings,3.7300,0.1100
+CA:AGSL,Lam Research Corp.,2026-08-31,issuer full holdings file,3.3800,2026-09-30,issuer page: top 10 holdings,3.7400,0.3600
+CA:AGSL,TechnipFMC PLC,2026-08-31,issuer full holdings file,3.1300,2026-09-30,issuer page: top 10 holdings,2.7600,-0.3700
+CA:AGSL,Mitsubishi UFJ Financial Group Inc.,2026-08-31,issuer full holdings file,2.9800,2026-09-30,issuer page: top 10 holdings,3.0800,0.1000
+CA:AGSL,Robinhood Markets Inc.,2026-08-31,issuer full holdings file,1.3300,2026-09-30,issuer page: top 10 holdings,2.9300,1.6000
+CA:AMGR,NVIDIA Corp.,2026-08-31,issuer full holdings file,7.8800,2026-09-30,issuer page: top 10 holdings,7.9300,0.0500
+CA:AMGR,Amazon.com Inc.,2026-08-31,issuer full holdings file,5.4400,2026-09-30,issuer page: top 10 holdings,5.0800,-0.3600
+CA:AMGR,Alphabet Inc.,2026-08-31,issuer full holdings file,5.0800,2026-09-30,issuer page: top 10 holdings,5.0100,-0.0700
+CA:AMGR,Microsoft Corp.,2026-08-31,issuer full holdings file,4.9800,2026-09-30,issuer page: top 10 holdings,6.4200,1.4400
+CA:AMGR,Eli Lilly and Co.,2026-08-31,issuer full holdings file,3.8000,2026-09-30,issuer page: top 10 holdings,3.7000,-0.1000
+CA:AMGR,Johnson & Johnson,2026-08-31,issuer full holdings file,3.5400,2026-09-30,issuer page: top 10 holdings,3.4300,-0.1100
+CA:AMGR,Meta Platforms Inc.,2026-08-31,issuer full holdings file,3.3700,2026-09-30,issuer page: top 10 holdings,4.1500,0.7800
+CA:AMGR,Valero Energy Corp.,2026-08-31,issuer full holdings file,2.9500,2026-09-30,issuer page: top 10 holdings,3.1000,0.1500
+CA:AMGR,Applied Materials Inc.,2026-08-31,issuer full holdings file,2.5100,2026-09-30,issuer page: top 10 holdings,2.7200,0.2100
+CA:AMGR,Advanced Micro Devices Inc.,2026-08-31,issuer full holdings file,2.4900,2026-09-30,issuer page: top 10 holdings,3.1500,0.6600
+CA:AENU,NVIDIA Corp.,2026-08-31,issuer full holdings file,3.4700,2026-09-30,issuer page: top 10 holdings,3.9900,0.5200
+CA:AENU,Applied Materials Inc.,2026-08-31,issuer full holdings file,3.3700,2026-09-30,issuer page: top 10 holdings,2.8300,-0.5400
+CA:AENU,Advanced Micro Devices Inc.,2026-08-31,issuer full holdings file,3.1400,2026-09-30,issuer page: top 10 holdings,1.9500,-1.1900
+CA:AENU,Bank of America Corp.,2026-08-31,issuer full holdings file,2.8500,2026-09-30,issuer page: top 10 holdings,2.2900,-0.5600
+CA:AENU,Alphabet Inc.,2026-08-31,issuer full holdings file,2.7900,2026-09-30,issuer page: top 10 holdings,1.9600,-0.8300
+CA:AENU,AbbVie Inc.,2026-08-31,issuer full holdings file,2.6600,2026-09-30,issuer page: top 10 holdings,1.8600,-0.8000
+CA:AENU,Microsoft Corp.,2026-08-31,issuer full holdings file,2.3700,2026-09-30,issuer page: top 10 holdings,1.8300,-0.5400
+CA:AENU,Verizon Communications Inc.,2026-08-31,issuer full holdings file,2.3500,2026-09-30,issuer page: top 10 holdings,1.9300,-0.4200
+CA:AENU,Broadcom Inc.,2026-08-31,issuer full holdings file,2.1400,2026-09-30,issuer page: top 10 holdings,2.2700,0.1300
+CA:AENU,Cisco Systems Inc.,2026-08-31,issuer full holdings file,2.0500,2026-09-30,issuer page: top 10 holdings,2.0400,-0.0100
+CA:AGLR,"Government of United States of America Inflation Index Linked 0.50% January 15, 2028",2026-08-31,issuer full holdings file,3.4300,2026-09-30,issuer page: top 10 holdings,3.6000,0.1700
+CA:AGLR,Cheniere Energy Inc.,2026-08-31,issuer full holdings file,3.0800,2026-09-30,issuer page: top 10 holdings,2.9900,-0.0900
+CA:AGLR,Glencore PLC,2026-08-31,issuer full holdings file,2.9700,2026-09-30,issuer page: top 10 holdings,2.8600,-0.1100
+CA:AGLR,Anglo American PLC,2026-08-31,issuer full holdings file,2.4300,2026-09-30,issuer page: top 10 holdings,2.3800,-0.0500
+CA:AGLR,Siemens AG,2026-08-31,issuer full holdings file,2.2800,2026-09-30,issuer page: top 10 holdings,2.2600,-0.0200
+CA:AGLR,Aena SME SA,2026-08-31,issuer full holdings file,2.1800,2026-09-30,issuer page: top 10 holdings,2.1600,-0.0200
+CA:AGLR,Wheaton Precious Metals Corp.,2026-08-31,issuer full holdings file,2.1200,2026-09-30,issuer page: top 10 holdings,1.9700,-0.1500
+CA:AGLR,Freeport-McMoRan Inc.,2026-08-31,issuer full holdings file,1.9000,2026-09-30,issuer page: top 10 holdings,1.8400,-0.0600
+CA:AGLR,Linde PLC,2026-08-31,issuer full holdings file,1.5900,2026-09-30,issuer page: top 10 holdings,1.9300,0.3400
+CA:ASMD,Natera Inc.,2026-08-31,issuer full holdings file,4.8800,2026-09-30,issuer page: top 10 holdings,6.2300,1.3500
+CA:ASMD,LPL Financial Holdings Inc.,2026-08-31,issuer full holdings file,4.8100,2026-09-30,issuer page: top 10 holdings,3.9500,-0.8600
+CA:ASMD,Illumina Inc.,2026-08-31,issuer full holdings file,4.5200,2026-09-30,issuer page: top 10 holdings,5.7500,1.2300
+CA:ASMD,Casey's General Stores Inc.,2026-08-31,issuer full holdings file,3.7800,2026-09-30,issuer page: top 10 holdings,3.0400,-0.7400
+CA:ASMD,HF Sinclair Corp.,2026-08-31,issuer full holdings file,3.3600,2026-09-30,issuer page: top 10 holdings,3.5300,0.1700
+CA:ASMD,Okta Inc.,2026-08-31,issuer full holdings file,3.2200,2026-09-30,issuer page: top 10 holdings,3.8700,0.6500
+CA:ASMD,Viking Holdings Ltd.,2026-08-31,issuer full holdings file,3.2200,2026-09-30,issuer page: top 10 holdings,2.9100,-0.3100
+CA:ASMD,DigitalOcean Holdings Inc.,2026-08-31,issuer full holdings file,2.9600,2026-09-30,issuer page: top 10 holdings,3.5500,0.5900
+CA:ASMD,JFrog Ltd.,2026-08-31,issuer full holdings file,2.9600,2026-09-30,issuer page: top 10 holdings,2.8500,-0.1100
+CA:ASMD,Viavi Solutions Inc.,2026-08-31,issuer full holdings file,2.7500,2026-09-30,issuer page: top 10 holdings,3.1500,0.4000
+CA:ATRB,"Federal Republic of Germany 2.90% October 8, 2031",2026-08-31,issuer full holdings file,5.2400,2026-09-30,issuer page: top 10 holdings,6.2700,1.0300
+CA:ATRB,"Government of Canada 2.75% June 1, 2033",2026-08-31,issuer full holdings file,2.5800,2026-09-30,issuer page: top 10 holdings,2.5700,-0.0100
+CA:ATRB,"Government of Canada 3.25% June 1, 2036",2026-08-31,issuer full holdings file,1.5700,2026-09-30,issuer page: top 10 holdings,2.0700,0.5000
+CA:ATRB,"Federal Republic of Germany 3.00% August 15, 2036",2026-08-31,issuer full holdings file,1.5200,2026-09-30,issuer page: top 10 holdings,1.5100,-0.0100
+CA:ATRB,"Government of Australia 1.50% June 21, 2031",2026-08-31,issuer full holdings file,1.4300,2026-09-30,issuer page: top 10 holdings,1.4300,0.0000
+CA:ATRB,"Government of United States of America 4.625% August 15, 2036",2026-08-31,issuer full holdings file,1.3100,2026-09-30,issuer page: top 10 holdings,4.1300,2.8200
+CA:ATRB,"NRG Energy Inc. 4.45% June 15, 2029",2026-08-31,issuer full holdings file,1.2700,2026-09-30,issuer page: top 10 holdings,1.3100,0.0400
+CA:ATRB,"Republic of South Africa 7.00% February 28, 2031",2026-08-31,issuer full holdings file,1.2600,2026-09-30,issuer page: top 10 holdings,1.8300,0.5700
+CA:ATRB,"Government of Canada 2.75% August 1, 2028",2026-08-31,issuer full holdings file,0.4300,2026-09-30,issuer page: top 10 holdings,1.5100,1.0800
+CA:ATAP,WSP Global Inc.,2026-09-30,issuer page: top 10 holdings,5.5100,2026-10-21,issuer full holdings file,5.7600,0.2500
+CA:ATAP,Cameco Corp.,2026-09-30,issuer page: top 10 holdings,4.8000,2026-10-21,issuer full holdings file,6.0200,1.2200
+CA:ATAP,Baker Hughes Co.,2026-09-30,issuer page: top 10 holdings,4.5600,2026-10-21,issuer full holdings file,6.3300,1.7700
+CA:ATAP,Bloom Energy Corp.,2026-09-30,issuer page: top 10 holdings,4.1600,2026-10-21,issuer full holdings file,3.7000,-0.4600
+CA:ATAP,Generac Holdings Inc.,2026-09-30,issuer page: top 10 holdings,4.0600,2026-10-21,issuer full holdings file,4.1100,0.0500
+CA:ATAP,Darling Ingredients Inc.,2026-09-30,issuer page: top 10 holdings,3.8300,2026-10-21,issuer full holdings file,3.8400,0.0100
+CA:ATAP,HA Sustainable Infrastructure Capital Inc.,2026-09-30,issuer page: top 10 holdings,3.7000,2026-10-21,issuer full holdings file,3.8900,0.1900
+CA:ATAP,TransAlta Corp.,2026-09-30,issuer page: top 10 holdings,3.6200,2026-10-21,issuer full holdings file,4.1100,0.4900
+CA:ATAP,5n Plus Inc.,2026-09-30,issuer page: top 10 holdings,3.6100,2026-10-21,issuer full holdings file,3.5400,-0.0700
+CA:ATAP,Perimeter Solutions Inc.,2026-09-30,issuer page: top 10 holdings,3.5400,2026-10-21,issuer full holdings file,3.7800,0.2400
+CA:DGLM,SEK Currency,2026-09-30,negative/short holdings (Desjardins),-0.0001,2026-10-21,complete holdings (Desjardins),-0.0000,0.0000
+CA:DGLM,AUD Currency,2026-09-30,negative/short holdings (Desjardins),-0.0049,2026-10-21,complete holdings (Desjardins),-0.0233,-0.0180
+CA:DGLM,GBP Currency,2026-09-30,negative/short holdings (Desjardins),-0.0174,2026-10-21,complete holdings (Desjardins),-0.0889,-0.0710
+CA:DGLM,JPY Currency,2026-09-30,negative/short holdings (Desjardins),-0.1602,2026-10-21,complete holdings (Desjardins),0.1592,0.3190
+CA:DGLM,EUR Currency,2026-09-30,negative/short holdings (Desjardins),-0.8258,2026-10-21,complete holdings (Desjardins),-0.3624,0.4630
+CA:DGLM,USD Currency,2026-09-30,negative/short holdings (Desjardins),-3.0806,2026-10-21,complete holdings (Desjardins),-3.8241,-0.7440
+CA:EQLI,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.3200,2026-09-30,issuer page: top holdings,7.5900,-0.7300
+CA:EQLI,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.0700,2026-09-30,issuer page: top holdings,7.5900,-0.4800
+CA:EQLI,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),7.5300,2026-09-30,issuer page: top holdings,7.5900,0.0600
+CA:EQLI,FLEX OPTION BALANCE MS USD,2026-07-31,issuer full holdings file (fund-level),0.6300,2026-09-30,issuer page: top holdings,0.6500,0.0200
+CA:QQCI,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.1900,2026-09-30,issuer page: top holdings,7.7200,-0.4700
+CA:QQCI,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.1200,2026-09-30,issuer page: top holdings,7.7200,-0.4000
+CA:QQCI,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.0300,2026-09-30,issuer page: top holdings,7.7200,-0.3100
+CA:QQCI,FLEX OPTION BALANCE MS USD,2026-07-31,issuer full holdings file (fund-level),1.3400,2026-09-30,issuer page: top holdings,1.2900,-0.0500
+CA:EQLI.F,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.3200,2026-09-30,issuer page: top holdings,7.5900,-0.7300
+CA:EQLI.F,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.0700,2026-09-30,issuer page: top holdings,7.5900,-0.4800
+CA:EQLI.F,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),7.5300,2026-09-30,issuer page: top holdings,7.5900,0.0600
+CA:EQLI.F,FLEX OPTION BALANCE MS USD,2026-07-31,issuer full holdings file (fund-level),0.6300,2026-09-30,issuer page: top holdings,0.6500,0.0200
+CA:EQLI.U,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.3200,2026-09-30,issuer page: top holdings,7.5900,-0.7300
+CA:EQLI.U,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.0700,2026-09-30,issuer page: top holdings,7.5900,-0.4800
+CA:EQLI.U,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),7.5300,2026-09-30,issuer page: top holdings,7.5900,0.0600
+CA:EQLI.U,FLEX OPTION BALANCE MS USD,2026-07-31,issuer full holdings file (fund-level),0.6300,2026-09-30,issuer page: top holdings,0.6500,0.0200
+CA:QQCI.U,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.1900,2026-09-30,issuer page: top holdings,7.7200,-0.4700
+CA:QQCI.U,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.1200,2026-09-30,issuer page: top holdings,7.7200,-0.4000
+CA:QQCI.U,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.0300,2026-09-30,issuer page: top holdings,7.7200,-0.3100
+CA:QQCI.U,FLEX OPTION BALANCE MS USD,2026-07-31,issuer full holdings file (fund-level),1.3400,2026-09-30,issuer page: top holdings,1.2900,-0.0500
+CA:QQCI.F,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.1900,2026-09-30,issuer page: top holdings,7.7200,-0.4700
+CA:QQCI.F,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.1200,2026-09-30,issuer page: top holdings,7.7200,-0.4000
+CA:QQCI.F,United States Treasury Bill (USD),2026-07-31,issuer full holdings file (fund-level),8.0300,2026-09-30,issuer page: top holdings,7.7200,-0.3100
+CA:QQCI.F,FLEX OPTION BALANCE MS USD,2026-07-31,issuer full holdings file (fund-level),1.3400,2026-09-30,issuer page: top holdings,1.2900,-0.0500
+CA:NSCE,Royal Bank of Canada,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),6.0000,2026-09-30,top 10 holdings (NBI),6.0300,0.0300
+CA:NSCE,Bank of Montreal,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.5000,2026-09-30,top 10 holdings (NBI),4.4700,-1.0300
+CA:NSCE,Metro Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.2000,2026-09-30,top 10 holdings (NBI),4.1100,-1.0900
+CA:NSCE,Restaurant Brands International Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.1000,2026-09-30,top 10 holdings (NBI),4.5100,-0.5900
+CA:NSCE,National Bank of Canada,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.0000,2026-09-30,top 10 holdings (NBI),4.5200,-0.4800
+CA:NSCE,Canadian National Railway Co.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.8000,2026-09-30,top 10 holdings (NBI),5.1000,0.3000
+CA:NSCE,Intact Financial Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.6000,2026-09-30,top 10 holdings (NBI),4.2400,-0.3600
+CA:NSCE,Canadian Pacific Kansas City,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.5000,2026-09-30,top 10 holdings (NBI),4.6600,0.1600
+CA:NGPE,Apollo Global Management Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),7.0000,2026-09-30,top 10 holdings (NBI),7.2400,0.2400
+CA:NGPE,3i Group PLC,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),6.3000,2026-09-30,top 10 holdings (NBI),7.6800,1.3800
+CA:NGPE,Partners Group Holding AG,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.6000,2026-09-30,top 10 holdings (NBI),4.7600,-0.8400
+CA:NGPE,EQT AB,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.5000,2026-09-30,top 10 holdings (NBI),6.6000,1.1000
+CA:NGPE,T Rowe Price Group Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.0000,2026-09-30,top 10 holdings (NBI),4.1100,0.1100
+CA:NGPE,CVC Capital Partners PLC,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.9000,2026-09-30,top 10 holdings (NBI),3.8900,0.9900
+CA:NINT,ING Groep NV,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.8000,2026-09-30,top 10 holdings (NBI),2.9700,-1.8300
+CA:NUSA,Nvidia Corporation,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),9.5000,2026-09-30,top 10 holdings (NBI),9.7500,0.2500
+CA:NUSA,Microsoft Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),7.2000,2026-09-30,top 10 holdings (NBI),8.8700,1.6700
+CA:NUSA,"Alphabet Inc., Class A",2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),6.5000,2026-09-30,top 10 holdings (NBI),6.3200,-0.1800
+CA:NUSA,Amazon.com Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.9000,2026-09-30,top 10 holdings (NBI),6.1400,0.2400
+CA:NUSA,Broadcom Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.8000,2026-09-30,top 10 holdings (NBI),4.2500,-0.5500
+CA:NUSA,Apple Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.7000,2026-09-30,top 10 holdings (NBI),4.2500,-0.4500
+CA:NUSA,Danaher Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),3.7000,2026-09-30,top 10 holdings (NBI),3.7600,0.0600
+CA:NUSA,"Meta Platforms, Inc., Class A",2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),3.6000,2026-09-30,top 10 holdings (NBI),4.0000,0.4000
+CA:NUSA,Lam Research Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.7000,2026-09-30,top 10 holdings (NBI),4.2000,1.5000
+CA:NSGE,Apple Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.5000,2026-09-30,top 10 holdings (NBI),4.2200,-0.2800
+CA:NSGE,Nvidia Corporation,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.1000,2026-09-30,top 10 holdings (NBI),7.0500,2.9500
+CA:NSGE,"Alphabet Inc., Class A",2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.6000,2026-09-30,top 10 holdings (NBI),5.1500,2.5500
+CA:NSGE,"Visa Inc., Class A",2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.5000,2026-09-30,top 10 holdings (NBI),2.9400,0.4400
+CA:NSGE,Rockwell Automation,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.2000,2026-09-30,top 10 holdings (NBI),2.3800,0.1800
+CA:NSGE,Merck & Co. Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.1000,2026-09-30,top 10 holdings (NBI),2.5400,0.4400
+CA:NSGE,Emerson Electric Co.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),1.7000,2026-09-30,top 10 holdings (NBI),2.3000,0.6000
+CA:NDIV,Royal Bank of Canada,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),8.4000,2026-09-30,top 10 holdings (NBI),8.0100,-0.3900
+CA:NDIV,Agnico-Eagle Mines Ltd.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),6.7000,2026-09-30,top 10 holdings (NBI),3.0000,-3.7000
+CA:NDIV,Toronto-Dominion Bank,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),6.4000,2026-09-30,top 10 holdings (NBI),6.1100,-0.2900
+CA:NDIV,Wheaton Precious Metals Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.2000,2026-09-30,top 10 holdings (NBI),3.0700,-2.1300
+CA:NDIV,Bank of Montreal,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.1000,2026-09-30,top 10 holdings (NBI),4.1500,-0.9500
+CA:NDIV,Lundin Gold Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),3.8000,2026-09-30,top 10 holdings (NBI),4.1600,0.3600
+CA:NDIV,Gibson Energy Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.7000,2026-09-30,top 10 holdings (NBI),3.1000,0.4000
+CA:NUSA.F,Nvidia Corporation,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),9.5000,2026-09-30,top 10 holdings (NBI),9.7500,0.2500
+CA:NUSA.F,Microsoft Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),7.2000,2026-09-30,top 10 holdings (NBI),8.8700,1.6700
+CA:NUSA.F,"Alphabet Inc., Class A",2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),6.5000,2026-09-30,top 10 holdings (NBI),6.3200,-0.1800
+CA:NUSA.F,Amazon.com Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),5.9000,2026-09-30,top 10 holdings (NBI),6.1400,0.2400
+CA:NUSA.F,Broadcom Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.8000,2026-09-30,top 10 holdings (NBI),4.2500,-0.5500
+CA:NUSA.F,Apple Inc.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),4.7000,2026-09-30,top 10 holdings (NBI),4.2500,-0.4500
+CA:NUSA.F,Danaher Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),3.7000,2026-09-30,top 10 holdings (NBI),3.7600,0.0600
+CA:NUSA.F,"Meta Platforms, Inc., Class A",2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),3.6000,2026-09-30,top 10 holdings (NBI),4.0000,0.4000
+CA:NUSA.F,Lam Research Corp.,2026-03-31,top 25 holdings (NBI quarterly portfolio disclosure PDF; 1 decimal),2.7000,2026-09-30,top 10 holdings (NBI),4.2000,1.5000
+CA:PFMN,Royal Bank of Canada,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,4.0000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,4.9240,0.9240
+CA:PFMN,NVIDIA Corp.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,2.9000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,2.7980,-0.1020
+CA:PFMN,Suncor Energy Inc.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,2.5000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,1.8130,-0.6870
+CA:PFMN,Apple Inc.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,1.9000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,1.5481,-0.3520
+CA:PFMN,Invesco S&P 500 Low Volatility ETF,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,1.6000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,2.6563,1.0560
+CA:PFMN,Power Corp. of Canada,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,1.6000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,1.7260,0.1260
+CA:PFLS,Royal Bank of Canada,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,6.0000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,7.5280,1.5280
+CA:PFLS,Canadian Natural Resources Ltd.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,4.3000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,2.0694,-2.2310
+CA:PFLS,Suncor Energy Inc.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,3.0000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,2.7990,-0.2010
+CA:PFLS,NVIDIA Corp.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,3.0000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,3.4880,0.4880
+CA:PFLS,Canadian Pacific Kansas City Ltd.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,2.9000,2026-09-30,issuer page: top10Holdings; issuer page: topBondHoldings; issuer page: topEquityHoldings; issuer page: topHoldingsMixed,3.0820,0.1820
+CA:PFAE,Royal Bank of Canada,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,6.5000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,7.5950,1.0950
+CA:PFAE,Canadian Natural Resources Ltd.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,4.1000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,2.7940,-1.3060
+CA:PFAE,Agnico Eagle Mines Ltd.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,3.3000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,1.8820,-1.4180
+CA:PFAE,Canadian Pacific Kansas City Ltd.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,2.6000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,2.7320,0.1320
+CA:PFAE,Suncor Energy Inc.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,2.4000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,2.5400,0.1400
+CA:PFAE,Cenovus Energy Inc.,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,2.0000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,2.1780,0.1780
+CA:PFAE,Power Corp. of Canada,2026-03-31,quarterly portfolio disclosure: Top 25 Long Positions,1.6000,2026-09-30,issuer page: top10Holdings; issuer page: topHoldingsMixed,1.8134,0.2130
+CA:RIIN,"NextEra Energy, Inc.",2026-06-30,Top 25 holdings (quarterly portfolio disclosure),4.5000,2026-08-31,"top 10 (fund level, all series)",4.7200,0.2200
+CA:RIIN,Aena S.M.E. SA,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),4.4000,2026-08-31,"top 10 (fund level, all series)",5.1200,0.7200
+CA:RIIN,Targa Resources Corp.,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.6000,2026-08-31,"top 10 (fund level, all series)",2.9600,0.3600
+CA:RIIN,Iberdrola SA,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.5000,2026-08-31,"top 10 (fund level, all series)",2.3300,-0.1700
+CA:RIIN,Xcel Energy Inc.,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.4000,2026-08-31,"top 10 (fund level, all series)",2.3600,-0.0400
+CA:RIIN,Getlink SE,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.4000,2026-08-31,"top 10 (fund level, all series)",2.4800,0.0800
+CA:RIIN,"Cheniere Energy, Inc.",2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.2000,2026-08-31,"top 10 (fund level, all series)",2.8900,0.6900
+CA:RIRA,Russell Investments Global Real Estate Pool Series O,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),39.8000,2026-08-31,"top 10 (fund level, all series)",34.4800,-5.3200
+CA:RIRA,Russell Investments Global Infrastructure Pool Series O,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),36.2000,2026-08-31,"top 10 (fund level, all series)",36.4900,0.2900
+CA:RIRA,Invesco DB Commodity Index Tracking Fund,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),9.5000,2026-08-31,"top 10 (fund level, all series)",10.9200,1.4200
+CA:RIRA,BP PLC,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),0.4000,2026-08-31,"top 10 (fund level, all series)",0.5700,0.1700
+CA:RIRA,"Vista Energy, SAB de CV ADR",2026-06-30,Top 25 holdings (quarterly portfolio disclosure),0.4000,2026-08-31,"top 10 (fund level, all series)",0.5400,0.1400
+CA:RIRA,Harbour Energy PLC,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),0.4000,2026-08-31,"top 10 (fund level, all series)",0.5400,0.1400
+CA:RIRA,ConocoPhillips,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),0.4000,2026-08-31,"top 10 (fund level, all series)",0.5700,0.1700
+CA:RIGE,Alphabet Inc.,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),4.3000,2026-08-31,"top 10 (fund level, all series)",3.5100,-0.7900
+CA:RIGE,NVIDIA Corporation,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),4.1000,2026-08-31,"top 10 (fund level, all series)",4.3800,0.2800
+CA:RIGE,"Amazon.com, Inc.",2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.9000,2026-08-31,"top 10 (fund level, all series)",3.0100,0.1100
+CA:RIGE,Apple Inc.,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),2.6000,2026-08-31,"top 10 (fund level, all series)",2.7100,0.1100
+CA:RIGE,Broadcom Inc.,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),1.7000,2026-08-31,"top 10 (fund level, all series)",1.5800,-0.1200
+CA:RIGE,Meta Platforms Inc. Cl. A,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),1.6000,2026-08-31,"top 10 (fund level, all series)",1.6200,0.0200
+CA:RIGE,Microsoft Corporation,2026-06-30,Top 25 holdings (quarterly portfolio disclosure),1.5000,2026-08-31,"top 10 (fund level, all series)",1.9800,0.4800

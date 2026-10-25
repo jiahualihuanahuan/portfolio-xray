@@ -1,0 +1,26 @@
+rank,company,tickers,sector,country,asset_classes,lines,value_cad,pct
+1,ROYAL BANK OF CANADA,RY,Financials,Canada,Equity,1,11244.3001,14.3514
+2,SHOPIFY SUBORDINATE VOTING CLASS A,SHOP,Information Technology,Canada,Equity,1,5693.3139,7.2665
+3,TORONTO DOMINION,TD,Financials,Canada,Equity,1,3055.1846,3.8994
+4,BANK OF NOVA SCOTIA,BNS,Financials,Canada,Equity,1,2774.6659,3.5414
+5,BANK OF MONTREAL,BMO,Financials,Canada,Equity,1,2723.7996,3.4765
+6,CANADIAN IMPERIAL BANK OF COMMERCE,CM,Financials,Canada,Equity,1,2707.7131,3.4559
+7,National Bank of Canada,,Financials,Canada,Equity,1,2383.5886,3.0422
+8,NVIDIA Corp.,,Information Technology,United States,Equity,1,2348.2538,2.9971
+9,"Apple, Inc.",,Information Technology,United States,Equity,1,2059.3884,2.6284
+10,"Alphabet, Inc.",,Communication Services,United States,Equity,2,1824.6462,2.3288
+11,Microsoft Corp.,,Information Technology,United States,Equity,1,1342.6109,1.7136
+12,"Amazon.com, Inc.",,Consumer Discretionary,United States,Equity,1,1130.5939,1.4430
+13,"Broadcom, Inc.",,Information Technology,United States,Equity,1,866.6736,1.1062
+14,"Micron Technology, Inc.",,Information Technology,United States,Equity,1,630.8055,0.8051
+15,"Meta Platforms, Inc.",,Communication Services,United States,Equity,1,599.4286,0.7651
+16,"Tesla, Inc.",,Consumer Discretionary,United States,Equity,1,573.8593,0.7324
+17,Eli Lilly & Co.,,Health Care,United States,Equity,1,459.7586,0.5868
+18,"Advanced Micro Devices, Inc.",,Information Technology,United States,Equity,1,459.0176,0.5859
+19,"Berkshire Hathaway, Inc.",,Financials,United States,Equity,1,444.3997,0.5672
+20,JPMorgan Chase & Co.,,Financials,United States,Equity,1,405.1313,0.5171
+21,Intel Corp.,,Information Technology,United States,Equity,1,319.6860,0.4080
+22,Johnson & Johnson,,Health Care,United States,Equity,1,296.1407,0.3780
+23,"Applied Materials, Inc.",,Information Technology,United States,Equity,1,278.0320,0.3549
+24,Exxon Mobil Corp.,,Fixed Income,United States,Equity,1,274.5453,0.3504
+25,"Visa, Inc.",,Financials,United States,Equity,1,272.4882,0.3478

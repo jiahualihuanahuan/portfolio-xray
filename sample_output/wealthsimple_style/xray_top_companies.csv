@@ -1,0 +1,26 @@
+rank,company,tickers,sector,country,asset_classes,lines,value_cad,pct
+1,TORONTO DOMINION,TD,Financials,Canada,Equity,1,5827.0430,19.0962
+2,NVIDIA Corp.,,Information Technology,United States,Equity,1,936.7470,3.0699
+3,"Apple, Inc.",,Information Technology,United States,Equity,1,834.7359,2.7356
+4,"Alphabet, Inc.",,Communication Services,United States,Equity,2,755.2222,2.4750
+5,Microsoft Corp.,,Information Technology,United States,Equity,1,544.2108,1.7835
+6,"Amazon.com, Inc.",,Consumer Discretionary,United States,Equity,1,472.6295,1.5489
+7,ROYAL BANK OF CANADA,RY,Financials,Canada,Equity,1,441.2578,1.4461
+8,"Micron Technology, Inc.",,Information Technology,United States,Equity,1,413.7373,1.3559
+9,"Broadcom, Inc.",,Information Technology,United States,Equity,1,351.4657,1.1518
+10,SHOPIFY SUBORDINATE VOTING CLASS A,SHOP,Information Technology,Canada,Equity,1,332.3316,1.0891
+11,"Advanced Micro Devices, Inc.",,Information Technology,United States,Equity,1,301.0695,0.9867
+12,"Tesla, Inc.",,Consumer Discretionary,United States,Equity,1,295.8745,0.9696
+13,"Meta Platforms, Inc.",,Communication Services,United States,Equity,1,272.6882,0.8936
+14,Intel Corp.,,Information Technology,United States,Equity,1,211.7718,0.6940
+15,BANK OF MONTREAL,BMO,Financials,Canada,Equity,1,188.7917,0.6187
+16,"Applied Materials, Inc.",,Information Technology,United States,Equity,1,182.4280,0.5978
+17,BANK OF NOVA SCOTIA,BNS,Financials,Canada,Equity,1,179.5537,0.5884
+18,TAIWAN SEMICONDUCTOR MANUFACTURING,2330,Information Technology,Taiwan,Equity,1,173.4995,0.5686
+19,Lam Research Corp.,,Information Technology,United States,Equity,1,172.2277,0.5644
+20,"Walmart, Inc.",,Consumer Staples,United States,Equity,1,168.5038,0.5522
+21,ENBRIDGE,ENB,Energy,Canada,Equity,1,166.6907,0.5463
+22,CANADIAN NATURAL RESOURCES LTD,CNQ,Energy,Canada,Equity,1,164.3779,0.5387
+23,CANADIAN IMPERIAL BANK OF COMMERCE,CM,Financials,Canada,Equity,1,163.8693,0.5370
+24,AGNICO EAGLE MINES,AEM,Materials,Canada,Equity,1,145.2277,0.4759
+25,"Cisco Systems, Inc.",,Information Technology,United States,Equity,1,144.4206,0.4733
