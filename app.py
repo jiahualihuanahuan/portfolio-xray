@@ -823,6 +823,30 @@ DISCLAIMER = 'Informational only - not investment, tax or financial advice. Hold
 
 # ---------------- Best Canadian ETFs screener (rules-based) ----------------
 SCR_SRC = 'Cboe Canada / Trackinsight fund data (fund_overview + performance), NAV/AUM as of the date shown; holdings-based checks use our holdings index'
+LEVMAP = {}
+_GENERIC = set('canadian canada international global world equity equities banks bank telecom covered call enhanced equal weight index shares share corp corporation group holdings limited ltd inc class common america american national financial energy income growth core united states emerging markets developed'.split())
+def lev_info(r, rs=None):
+    """-> ('X', reason) to exclude, or (ratio or None, evidence). Moderate leverage 1.0<x<=1.4 is allowed (badged)."""
+    nm = r['name']; desc = (r.get('description') or '') + ' ' + (r.get('exposure') or '')
+    _inv = re.search(r'\binverse\b|\bbear\b|-\s?\d(\.\d+)?x\b|savvyshort|megashort|(?<!long/)(?<!long )(?<!ultra-)(?<!ultra )\bshort\b(?!.?(term|duration|maturity|-term|corporate|federal|provincial|bond|government))', nm, re.I)
+    if _inv: return 'X', 'inverse/short (name: %s)' % _inv.group(0)
+    if re.search(r'inverse exposure|\(-\d', desc, re.I): return 'X', 'inverse (description)'
+    ratio = ev = None
+    for src, t in (('name', nm), ('description', desc)):
+        m = re.search(r'\b(\d(?:\.\d+)?)\s?x\b', t, re.I) or re.search(r'\((\d(?:\.\d+)?)x\)', t, re.I)
+        if m and 1 < float(m.group(1)) <= 5: ratio, ev = float(m.group(1)), '%s: %s' % (src, m.group(0)); break
+        m = re.search(r'\b(1[1-9][0-9](?:\.\d+)?)\s?%\s?(?:exposure|leverage)', t, re.I) or re.search(r'\b(2[0-9]|3[0-9])(?:\.\d+)?\s?%\s?(?:leverage|borrowing)', t, re.I)
+        if m:
+            v = float(m.group(1)); ratio = v / 100 if v > 100 else 1 + v / 100; ev = '%s: %s' % (src, m.group(0)); break
+    if ratio is None and re.search(r'betapro|\bbull\b|ultrapro|\bdaily\b', nm, re.I): return 'X', 'daily leveraged product (name: %s), >=2x' % re.search(r'betapro|\bbull\b|ultrapro|\bdaily\b', nm, re.I).group(0)
+    if ratio is None and re.search(r'^(hamilton|global x|harvest)\b.*\benhanced\b', nm, re.I) and not re.search(r'enhanced (yield|premium|equity income fund)', nm, re.I) or (ratio is None and re.search(r'^harvest .*enhanced', nm, re.I)):
+        ratio, ev = 1.25, 'issuer naming convention: %s "Enhanced" funds use ~25%% leverage (1.25x)' % r['issuer']
+
+    if ratio is None and re.search(r'\b(leveraged|levered)\b', nm, re.I): return 'X', 'leveraged, ratio not stated (assumed >=2x)'
+    if ratio is None and re.search(r'\b(uses?|using|employs?|employing|applies|applying|delivers|modest|moderate|light|cash|portfolio|with) (modest |moderate |light |)leverage\b', desc, re.I) and not re.search(r'(no|not|without|low|financial|un)[ -]?(use )?(of )?leverag', desc, re.I): ratio, ev = 'n/s', 'description mentions leverage, ratio not stated: ' + re.search(r'.{0,50}\bleverag.{0,40}', desc, re.I).group(0)
+    if isinstance(ratio, float) and ratio >= 1.45: return 'X', 'leverage %.2gx (%s)' % (ratio, ev)
+    return ratio, ev
+
 LEV_RX = re.compile(r'\b(2x|3x|1\.25x|1\.33x|1\.5x|-1x|-2x|-3x|leveraged|levered|inverse|bull|bear|ultra(pro)?|daily)\b|betapro|\bshort\b(?!.?(term|duration|maturity|-term))', re.I)
 STOCK_RX = re.compile(r'\b(apple|tesla|nvidia|microsoft|amazon|alphabet|google|meta platforms|netflix|broadcom|amd|advanced micro|coinbase|berkshire|shopify|palantir|microstrategy|strategy inc|eli lilly|costco|walmart|jpmorgan|visa|mastercard|uber|super micro|intel|oracle|salesforce|exxon|unitedhealth|royal bank|toronto-dominion|enbridge|barrick|agnico|constellation software|brookfield|suncor|canadian natural)\b|yield shares|income shares|single[- ]stock', re.I)
 BTC_RX = re.compile(r'bitcoin|\bbtc\b', re.I); ALT_RX = re.compile(r'equity|portfolio|\+|balanced|ether|ethereum|solana|xrp|crypto|blockchain|miner|digital asset|multi|covered|yield|income|premium|enhanced|option|cardano|litecoin|altcoin', re.I)
@@ -841,10 +865,13 @@ OPT_RX = re.compile(r'covered call|call[- ]writing|option[- ]writing|options? (i
 DIV_RX = re.compile(r'dividend|high yield|yield|income|aristocrat|distribution', re.I)
 INC_RX = OPT_RX
 SECT_RX = re.compile(r'\b(banks?|financials?|technology|tech|health ?care|healthcare|utilit(y|ies)|real estate|reits?|telecom|communication|consumer|industrials?|semiconductors?|biotech|cyber|cloud|artificial intelligence|ai|robotics|infrastructure|insurance|pipelines?|clean energy|innovation|fintech|gaming|cannabis|water|defen[cs]e|aerospace|transport|energy|materials|software|internet|genomics|esports|metaverse)\b', re.I)
-CATS = [('A', 'Core broad-market index'), ('B', 'Income: option-writing / covered call (broad index / multi-sector)'), ('C', 'Commodities & resources'), ('D', 'Bitcoin (spot only) - HIGH RISK'), ('E', 'Cash & cash equivalents (HISA, money market, ultra-short T-bill)'), ('S', 'Single-sector (deprioritized)')]
+CATS = [('A', 'Core broad-market index'), ('B', 'Income: option-writing / covered call (broad index / multi-sector)'), ('C', 'Commodities & resources'), ('D', 'Bitcoin (spot only) - HIGH RISK'), ('E', 'Cash & cash equivalents (HISA, money market, ultra-short T-bill)'), ('F', 'Bonds / fixed income'), ('G', 'Balanced / asset-allocation'), ('H', 'Thematic / other multi-sector'), ('S', 'Single-sector (deprioritized)')]
 DEFW = {'A': dict(perf=40, fee=35, yld=0, aum=15, track=10), 'B': dict(perf=30, fee=20, yld=35, aum=10, track=5), 'C': dict(perf=40, fee=30, yld=0, aum=20, track=10),
         'D': dict(perf=30, fee=50, yld=0, aum=15, track=5), 'S': dict(perf=40, fee=35, yld=0, aum=15, track=10),
-        'E': dict(vol=30, yld=30, fee=25, cons=10, aum=3, track=2, perf=0)}
+        'E': dict(vol=30, yld=30, fee=25, cons=10, aum=3, track=2, perf=0),
+        'F': dict(perf=25, fee=35, yld=25, aum=10, track=5), 'G': dict(perf=40, fee=35, yld=0, aum=15, track=10), 'H': dict(perf=40, fee=35, yld=0, aum=15, track=10)}
+BAL_RX = re.compile(r'\b(core (equity|growth|balanced|conservative|income balanced) etf|balanced|portfolio|asset allocation|all[- ]equity|all[- ]in[- ]one|growth etf|conservative etf|income etf portfolio|tactical asset)\b', re.I)
+BOND_RX = re.compile(r'\b(bond|fixed income|treasury|government|corporate|mortgage|preferred|floating rate|high yield|debt|credit|aggregate|maturity|laddered)\b', re.I)
 for _c in DEFW: DEFW[_c].setdefault('vol', 0); DEFW[_c].setdefault('cons', 0)
 CASH_RX = re.compile(r'high interest savings|\bsavings\b|money market|t-?bill|treasury bill|cash management|premium cash|\bcash (maximizer|etf|account)|0-3 month|cash maximizer|\bcash fund\b|ultra[- ]short[- ]term (government|treasury|t-bill)', re.I)
 CASH_BAD = re.compile(r'yield maximizer|premium yield|bond|corporate|credit|high yield|floating|mortgage|aggregate|income fund|covered|\b(1|2|3|5)-?\d* ?(year|yr)', re.I)
@@ -861,7 +888,7 @@ def scr_rows():
 def classify_ca(r):
     """-> (cat or 'X:<reason>', group, evidence)"""
     nm = r['name']; txt = ' '.join([nm, r['index'], r['exposure']]); fk = 'CA:' + r['ticker']
-    ev = []; hv = None; sectors = None; topw = None
+    ev = []; hv = None; sectors = None; topw = None; topname = ''; rs = None; inf = {'partial': '1'}
     if CASH_RX.search(nm) and not CASH_BAD.search(nm) and 'Equity' not in r['asset_classes']:
         return 'E', ('HISA' if re.search(r'savings|cash', nm, re.I) else ('Money market' if re.search('money market', nm, re.I) else 'T-bill')) + (' USD' if re.search(r'\bUSD\b|U\.S\.|\bUS\b', nm) or r['ticker'].endswith('.U') else ' CAD'), 'name: ' + CASH_RX.search(nm).group(0) + ' (no duration/credit keywords)'
     if VEC and VEC.ready.is_set() and fk in VEC.vec:
@@ -877,10 +904,12 @@ def classify_ca(r):
         if sum(known.values()) > 0.5 and inf['partial'] != '1':
             tot = sum(known.values()); sectors = (sum(1 for w in known.values() if w / tot >= 0.02), max(known.items(), key=lambda t: t[1])[0], max(known.values()) / tot)
             ev.append('look-through: %d sectors >=2%%, top %s %.0f%%' % (sectors[0], sectors[1], 100 * sectors[2]))
-        secs = sorted((w for k, w in hv.items() if is_sec(k) and w > 0), reverse=True); topw = secs[0] if secs else None
+        _wrap = re.compile(r'total net assets|\betf\b|\bfund\b|\bclass [a-z]\b|portfolio|\btrust\b|index|pool|\bseries\b|\bunits?\b|cash|future|swap|forward', re.I)
+        secs = sorted((w for k, w in hv.items() if is_sec(k) and w > 0 and not _wrap.search((VEC.info.get(k) or {}).get('name', '') or k)), reverse=True); topw = secs[0] if secs else None; topname = next(((VEC.info.get(k) or {}).get('name', '') for k, w in sorted(hv.items(), key=lambda t: -t[1]) if is_sec(k) and w > 0 and not _wrap.search((VEC.info.get(k) or {}).get('name', '') or k)), '')  # wrappers/aggregate lines are not single stocks
         rs = float(inf['rawsum'] or 0)
-        if rs > 130 and inf['partial'] != '1': return 'X:leveraged/inverse', '', 'holdings weights sum to %.0f%% (leverage)' % rs
-    if LEV_RX.search(nm): return 'X:leveraged/inverse', '', 'name keyword: ' + LEV_RX.search(nm).group(0)
+    li = lev_info(r, rs if (hv is not None and inf['partial'] != '1') else None)
+    if li[0] == 'X': return 'X:leveraged (>=1.45x) / inverse', '', li[1]
+    LEVMAP[r['ticker']] = li
     if BTC_RX.search(nm) or 'bitcoin' in r['index'].lower():
         if ALT_RX.search(nm) or ALT_RX.search(r['index']): return 'X:crypto other than pure spot bitcoin', '', 'name/index mentions other crypto or overlay'
         return 'D', 'Bitcoin', 'name/index: bitcoin'
@@ -888,29 +917,38 @@ def classify_ca(r):
     if STOCK_RX.search(nm) or (r['index'] and STOCK_RX.search(r['index'])): return 'X:single-stock', '', 'name/index: ' + (STOCK_RX.search(nm) or STOCK_RX.search(r['index'])).group(0)
     for g, rx in COM:
         if re.search(rx, txt, re.I): return 'C', g, 'name/index/exposure: ' + re.search(rx, txt, re.I).group(0)
-    if topw and topw >= 0.4 and 'Equity' in r['asset_classes'] and not re.search(r'portfolio|balanced', nm, re.I): return 'X:single-stock', '', 'look-through: one holding = %.0f%%' % (100 * topw)
-    eq = 'Equity' in r['asset_classes'] and 'Fixed Income' not in r['asset_classes']
+    if topw and topw >= 0.4 and (re.search(r'highshares|-linked|\blinked\b|powerstock|single', nm, re.I) or any(len(w_) > 3 and w_.lower() not in _GENERIC and w_.lower() not in (r['issuer'] + ' ' + nm.split()[0]).lower() and re.search(r'\b%s\b' % re.escape(w_), nm, re.I) for w_ in re.findall(r'[A-Za-z]+', topname or ''))) and 'Equity' in r['asset_classes'] and not re.search(r'portfolio|balanced', nm, re.I): return 'X:single-stock', '', 'look-through: one holding = %.0f%%' % (100 * topw)
+    ac = r['asset_classes']
+    if not OPT_RX.search(nm) and (BAL_RX.search(nm) or ('Equity' in ac and 'Fixed Income' in ac)):
+        return 'G', 'Asset allocation', ('name: ' + BAL_RX.search(nm).group(0) if BAL_RX.search(nm) else 'holds equity + fixed income')
+    if ('Fixed Income' in ac and 'Equity' not in ac) or (not ac and BOND_RX.search(nm)) or re.search(r'preferred share', nm, re.I):
+        g = next((lab for lab, rx in (('Preferred shares', 'preferred'), ('High yield', 'high yield'), ('Floating rate', 'floating'), ('Short-term', r'short|1-[35] year|0-5'), ('Long-term', r'long|20\+|25\+'), ('Government', r'government|treasury|federal|provincial'), ('Corporate', 'corporate|investment grade'), ('Aggregate', 'aggregate|universe|core plus|total bond')) if re.search(rx, nm, re.I)), 'Other bond')
+        return 'F', g, 'asset class Fixed Income' if 'Fixed Income' in ac else 'name: ' + BOND_RX.search(nm).group(0)
+    eq = 'Equity' in ac and 'Fixed Income' not in ac
     fam = next((g for g, rx in FAM if re.search(rx, txt, re.I)), None)
     broad_h = sectors and sectors[0] >= 6 and sectors[2] < 0.5
     sect = SECT_RX.search(nm) or (not fam and sectors and sectors[2] >= 0.6)
     otxt = ' '.join([nm, r['index'], r.get('description', '') or '', r.get('exposure', '') or ''])
     if eq and (OPT_RX.search(nm) or OPT_RX.search(otxt)):  # option-writing / premium-income only
         if sect: return 'S', (SECT_RX.search(nm).group(0).title() if SECT_RX.search(nm) else sectors[1]) + ' (covered call)', 'single-sector option-writing: ' + OPT_RX.search(otxt).group(0)
-        if fam or broad_h: return 'B', fam or 'Multi-sector', 'option-writing: ' + OPT_RX.search(otxt).group(0) + '; ' + ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
-    if eq and DIV_RX.search(nm) and not sect and (fam or broad_h):  # dividend-stock ETFs are passive core, not income
-        return 'A', (fam or 'Multi-sector') + ' (dividend)', 'dividend-stock ETF (no option writing) -> core; ' + ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
+        if fam or broad_h or not sectors: return 'B', fam or ('Multi-sector' if broad_h else 'Broad (no sector data; ETF-of-ETFs)'), 'option-writing: ' + OPT_RX.search(otxt).group(0) + '; ' + ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
+    if eq and DIV_RX.search(nm) and not sect:  # dividend-stock ETFs are passive core, not income
+        return 'A', (fam or next((g for g, rx in (('Canada', r'canad'), ('US', r'\bU\.?S\.?\b|america'), ('International', r'international|eafe|europe|developed'), ('Global', r'global|world'), ('Emerging', 'emerging')) if re.search(rx, nm, re.I)), 'Multi-sector')) + ' (dividend)', 'dividend-stock ETF (no option writing) -> core; ' + ('index family %s' % fam if fam else 'broad multi-sector holdings') + ('; ' + ev[0] if ev else '')
     if eq and fam and not sect: return 'A', fam, 'index family match' + ('; ' + ev[0] if ev else '')
     if eq and sect: return 'S', (SECT_RX.search(nm).group(0).title() if SECT_RX.search(nm) else sectors[1]), ('name: ' + SECT_RX.search(nm).group(0) if SECT_RX.search(nm) else ev[0])
-    return 'X:other (not in A-E: bonds, balanced, thematic/unclassified)', '', ''
+    return 'H', (r.get('themes') or '').split('|')[0] or ('Active / other equity' if eq else 'Other / alternative'), 'not core/income/sector/commodity/bond/balanced -> thematic/other' + ('; ' + ev[0] if ev else '')
 
 def screener(weights=None):
     rows = scr_rows(); have = {r['ticker'] for r in rows}
-    out, excl = [], Counter()
+    out, excl, xl, var_pending = [], Counter(), [], []
     for r in rows:
         t = r['ticker']
-        if '.' in t and t.split('.')[0] in have: continue
+        if '.' in t and t.split('.')[0] in have: var_pending.append((t.split('.')[0], r)); continue
         cat, grp, ev = classify_ca(r)
-        if cat.startswith('X:'): excl[cat[2:]] += 1; continue
+        if cat.startswith('X:'):
+            excl[cat[2:]] += 1
+            xl.append(dict(category='X', ticker=t.split(':')[-1], name=r['name'], issuer=r['issuer'], reason=cat[2:], evidence=ev, aum_cad=fnum(r['aum']), mer_pct=None if fnum(r['expense_ratio']) is None else 100 * fnum(r['expense_ratio']), source_url=r['source_url'], nav_aum_as_of=r['nav_aum_as_of'] or 'n/a'))
+            continue
         inc = fnum(r['inception_date'][:4]) if r['inception_date'] else None
         try: yrs = (datetime.date.today() - datetime.date.fromisoformat(r['inception_date'][:10])).days / 365.25
         except ValueError: yrs = None
@@ -926,18 +964,27 @@ def screener(weights=None):
                         aum_cad=fnum(r['aum']), avg_volume_1m=fnum(r['avg_volume_1m']), years=None if yrs is None else round(yrs, 1),
                         td_pct=None if fnum(r['tracking_difference']) is None else 100 * fnum(r['tracking_difference']), te_pct=None if fnum(r['tracking_error']) is None else 100 * fnum(r['tracking_error']),
                         ret1y_pct=None if ann['1y'] is None else 100 * ann['1y'], ret3y_ann_pct=None if ann['3y'] is None else 100 * ann['3y'], ret5y_ann_pct=None if ann['5y'] is None else 100 * ann['5y'],
-                        nav_aum_as_of=r['nav_aum_as_of'] or 'n/a', perf_as_of=r['perf_as_of'] or 'n/a', classified_by=ev, source=SCR_SRC, source_url=r['source_url'],
-                        holdings_in_index=('CA:' + t) in IDX.funds, vol_pct=fnum(r.get('vol_monthly_std')), neg_months=fnum(r.get('neg_months_12m'))))
-    best = {}
+                        nav_aum_as_of=r['nav_aum_as_of'] or 'n/a', perf_as_of=r['perf_as_of'] or 'n/a', classified_by=ev, source=SCR_SRC, source_url=r['source_url'], variants='', leverage=(LEVMAP.get(t) or (None,))[0], leverage_evidence=(LEVMAP.get(t) or (None, ''))[1] or '',
+                        holdings_in_index=('CA:' + t) in IDX.funds, vol_pct=None if fnum(r.get('volatility_1y')) is None else 100 * fnum(r.get('volatility_1y')), neg_months=fnum(r.get('neg_months_12m'))))
+    best, grp_ = {}, defaultdict(list)
     for d in out:
-        d['ticker'] = d['ticker'].split(':')[-1]
-        k = (d['name'].lower(), d['issuer'].lower())
+        d['ticker'] = d['ticker'].split(':')[-1]; d.setdefault('variants', '')
+        k = (d['name'].lower(), d['issuer'].lower()); grp_[k].append(d)
         if k not in best or (d['aum_cad'] or 0) > (best[k]['aum_cad'] or 0): best[k] = d
-    nd = len(out) - len(best); out = list(best.values())
+    nvar = 0
+    for k, L in grp_.items():  # merged share classes are listed on the kept row, not dropped
+        oth = [x for x in L if x is not best[k]]; nvar += len(oth)
+        best[k]['variants'] = ', '.join('%s%s' % (x['ticker'], ' (hedged)' if x['hedged'] else '') for x in oth)
+    out = list(best.values()); byt = {d['ticker']: d for d in out}; bxt = {x['ticker']: x for x in xl}
+    for base, r in var_pending:  # .U/.F/.B listings of the same fund
+        tgt = byt.get(base) or bxt.get(base); nvar += 1
+        lab = r['ticker'] + (' (USD)' if r['ticker'].endswith('.U') or r.get('trading_currency') == 'USD' else '') + (' (hedged)' if r['currency_hedged'] == 'True' else '')
+        if tgt is None: xl.append(dict(category='X', ticker=r['ticker'], name=r['name'], issuer=r['issuer'], reason='variant of unlisted base', evidence='', aum_cad=fnum(r['aum']), mer_pct=None, source_url=r['source_url'], nav_aum_as_of=r['nav_aum_as_of'] or 'n/a')); nvar -= 1; continue
+        tgt['variants'] = (tgt.get('variants', '') + ', ' if tgt.get('variants') else '') + lab
     # reference fund per (benchmark group, hedged): largest-AUM fund in A (or C/D for their groups)
     ref = {}
     for d in out:
-        if d['category'] in ('A', 'C', 'D') and not d['active'] and d['aum_cad']:
+        if d['category'] in ('A', 'C', 'D', 'F', 'G', 'H') and not d['active'] and d['aum_cad']:
             k = (d['group'], d['hedged'])
             if k not in ref or d['aum_cad'] > ref[k]['aum_cad']: ref[k] = d
     for d in out:
@@ -949,6 +996,10 @@ def screener(weights=None):
             if x is not None: parts.append(x)
         if d['td_pct'] is not None: parts.append(d['td_pct'])
         d['perf_metric_pp'] = (sum(parts) / len(parts)) if parts else None
+        if d['category'] in ('B', 'G', 'H', 'S'):  # income / thematic / sector funds: compare on total return (NAV incl. distributions), since references are non-option funds
+            tr = [d[p] for p in ('ret1y_pct', 'ret3y_ann_pct', 'ret5y_ann_pct') if d[p] is not None]
+            d['perf_metric_pp'] = (sum(tr) / len(tr)) if tr else None; d['perf_basis'] = 'avg annualized NAV total return 1/3/5y'
+        else: d['perf_basis'] = 'excess vs reference + tracking difference'
     W = {}
     for c, _ in CATS:
         w = dict(DEFW[c])
@@ -972,18 +1023,33 @@ def screener(weights=None):
                 if d[f] is None: d['s_' + m] = None; continue
                 s = pct_rank(pools[m], d[f], h); d['s_' + m] = round(s, 1)
                 if W[c][m] > 0: num_ += W[c][m] * s; den += W[c][m]
-            d['score'] = round(num_ / den, 1) if den else None
+            subst = [m for m in ('perf', 'fee', 'yld', 'vol', 'cons') if d['s_' + m] is not None and W[c][m] > 0]
+            if W[c]['perf'] > 0 and d['s_perf'] is None and d['ret1y_pct'] is None: subst = [m for m in subst if m != 'yld']  # yield alone can't carry a fund with no performance record
+            d['score'] = round(num_ / den, 1) if den and len(subst) >= 2 else None
+            d['too_new'] = d['score'] is None  # = insufficient data (kept for sort)
+            b = []
+            if (d['years'] is not None and d['years'] < 1) or d['ret1y_pct'] is None: b.append('New (<1y)' if (d['years'] is not None and d['years'] < 1) else 'No 1y return')
+            if d.get('leverage'): b.append('Leverage %.2fx' % d['leverage'] if isinstance(d['leverage'], float) else 'Leverage (ratio not stated)')
+            if d['score'] is None: b.append('Insufficient data (<2 scored core metrics)')
+            d['badges'] = '; '.join(b)
             d['metrics_missing'] = ', '.join(m for m in M if d['s_' + m] is None and W[c][m] > 0) or ''
-        L.sort(key=lambda d: (-(d['score'] or -1), -(d['aum_cad'] or 0), -(d['years'] or 0)))
-        for i, d in enumerate(L): d['rank'] = i + 1
+        L.sort(key=lambda d: (d['too_new'], -(d['score'] or -1), -(d['aum_cad'] or 0), -(d['years'] or 0)))
+        k_ = 0
+        for d in L:
+            if d['too_new']: d['rank'] = None; d['subsection'] = 'Insufficient data (listed, not ranked)'
+            else: k_ += 1; d['rank'] = k_; d['subsection'] = 'Ranked'
+        est = [d for d in L if not d['too_new']]
         cov = {m: '%d/%d' % (len(pools[m]), len(L)) for m in M}
-        res[c] = dict(label=lab, weights=W[c], funds=L, coverage=cov, n=len(L))
-    excl['share-class/currency duplicates merged (kept largest AUM)'] = nd
-    return dict(categories=res, excluded=dict(excl), references={'%s%s' % (k[0], ' (hedged)' if k[1] else ''): v['ticker'] for k, v in ref.items()},
+        res[c] = dict(label=lab, weights=W[c], funds=L, coverage=cov, n=len(L), n_ranked=len(est), n_insufficient=len(L) - len(est), n_new=sum(1 for d in L if 'New' in d['badges']), n_levered=sum(1 for d in L if d.get('leverage')), n_variants=sum(len([v for v in d['variants'].split(', ') if v]) for d in L))
+    res['X'] = dict(label='Excluded (not recommended): leveraged/inverse, single-stock, non-bitcoin crypto', weights={}, funds=sorted(xl, key=lambda x: (x['reason'], x['ticker'])), coverage={}, n=len(xl), n_ranked=0, n_insufficient=0, n_new=0, n_levered=0, n_variants=0)
+    total = len(rows); listed = sum(v['n'] for v in res.values()) + nvar
+    coverage = dict(total_canada_listed=total, primary_rows=sum(v['n'] for v in res.values()), share_class_variants_listed_on_parent=nvar, sum_of_sections=listed, reconciles=listed == total,
+                    per_section={k: dict(n=v['n'], ranked=v['n_ranked'], insufficient=v['n_insufficient'], new=v['n_new'], levered=v['n_levered'], variants=v['n_variants']) for k, v in res.items()})
+    return dict(categories=res, coverage=coverage, excluded=dict(excl), references={'%s%s' % (k[0], ' (hedged)' if k[1] else ''): v['ticker'] for k, v in ref.items()},
                 method=('Classification (in order): leveraged/inverse excluded (name keywords 2x/3x/-1x/Bull/Bear/Inverse/Leveraged/BetaPro/Daily, or holdings weights >130%); '
                         'Bitcoin = name/index mentions bitcoin and nothing else crypto/overlay; single-stock excluded (company names in name/index, or one look-through holding >=40%); '
-                        'commodities by name/index/exposure keywords; income = income/covered-call/yield/dividend name + broad index family or >=6 sectors with top sector <50% (look-through); '
-                        'core = equity + broad index family (name/index/exposure); single-sector = sector keyword in name or one sector >=60% of look-through. Everything else (bonds, balanced, thematic) is not ranked. '
+                        'commodities by name/index/exposure keywords; income = option-writing names (covered call, premium/enhanced yield, yield maximizer, UltraYield, put-write); dividend ETFs go to core + broad index family or >=6 sectors with top sector <50% (look-through); '
+                        'core = equity + broad index family (name/index/exposure); single-sector = sector keyword in name or one sector >=60% of look-through; E cash = HISA/money market/0-3m T-bill names without bond/credit keywords; G balanced = allocation/portfolio names or equity+fixed income; F bonds = fixed income asset class; H = everything else. Universe = every Canada-listed ETF in Cboe Canada etf_list (all issuers; underlying holdings may be anywhere). New funds (<1y) are ranked with a New badge; a score needs >=2 non-missing weighted core metrics among performance/fee/yield/volatility/consistency (yield does not count toward the minimum when the category weights performance and the fund has none), otherwise the fund is listed with an Insufficient data badge. Moderate leverage (<=1.4x, e.g. 1.25x Enhanced funds) is ranked with a Leverage badge; >=1.45x and inverse are excluded. Share classes (.U/.F/hedged) are listed in the variants column of the main row. '
                         'Performance metric = average of available: tracking difference (Cboe/Trackinsight, vs the fund\'s own benchmark) and annualized NAV total-return excess vs the reference fund (largest-AUM passive fund in the same benchmark group and same hedging) over 1y/3y/5y. '
                         'Each metric becomes a percentile within its category (fees: lower is better); score = weighted average of available percentiles (missing metrics are skipped, not imputed). Ties: AUM then track length.'),
                 disclaimer=DISCLAIMER, source=SCR_SRC)
@@ -1118,10 +1184,15 @@ def main():
         for c, d in r['categories'].items():
             write_rows(a.out, 'screener_%s' % c, d['funds']); book['screener_' + c] = d['funds']
             print('== %s (%d funds; metric coverage %s)' % (d['label'], d['n'], d['coverage']))
-            for f in d['funds'][:5]:
+            if c == 'X':
+                for f in d['funds'][:5]: print('  %-8s %-45s %s' % (f['ticker'], f['name'][:45], f['reason']))
+                continue
+            for f in [x for x in d['funds'] if x['rank']][:5]:
                 fm = lambda v, p='%.2f': 'n/a' if v is None else p % v
                 print('  %d %-6s score %5s | perf %s pp (TD %s, ex1y %s, ex3y %s vs %s) | MER %s%% | yield %s%% | AUM %sM | %sy | %s' % (f['rank'], f['ticker'], fm(f['score'], '%.1f'), fm(f['perf_metric_pp']), fm(f['td_pct']), fm(f['excess_1y_pp']), fm(f['excess_3y_pp']), f['reference'], fm(f['mer_pct']), fm(f['yield_pct']), fm(f['aum_cad'] and f['aum_cad'] / 1e6, '%.0f'), fm(f['years'], '%.0f'), f['name'][:45]))
         print('  excluded:', r['excluded'])
+        cv = r['coverage']; print('  coverage: total Canada-listed %d = %s + %d share-class variants = %d (%s)' % (cv['total_canada_listed'], ' + '.join('%s %d' % (k, v['n']) for k, v in cv['per_section'].items()), cv['share_class_variants_listed_on_parent'], cv['sum_of_sections'], 'reconciles' if cv['reconciles'] else 'MISMATCH'))
+        write_rows(a.out, 'screener_coverage', [dict(section=k, **v) for k, v in cv['per_section'].items()] + [dict(section='share-class variants on parent rows', n=cv['share_class_variants_listed_on_parent']), dict(section='TOTAL Canada-listed', n=cv['total_canada_listed'])]); book['screener_coverage'] = [dict(section=k, **v) for k, v in cv['per_section'].items()]
         book['screener_method'] = [dict(method=r['method'], source=r['source'])]
     if reports:
         book['disclaimer'] = [dict(disclaimer=DISCLAIMER)]

@@ -1,0 +1,229 @@
+category,ticker,name,issuer,reason,evidence,aum_cad,mer_pct,source_url,nav_aum_as_of
+X,BCCC,Global X Bitcoin Covered Call ETF (CA),Global X,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,41421243.0000,1.0900,https://etfmarket.cboe.com/canada/en/fund/NEOE:BCCC,2026-10-22
+X,BCCL,Global X Enhanced Bitcoin Covered Call ETF,Global X,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,25750608.0000,2.1000,https://etfmarket.cboe.com/canada/en/fund/BCCL,2026-10-22
+X,BDAY,Hamilton Enhanced Bitcoin DayMAX ETF,Hamilton ETFs,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,31793790.0000,0.8500,https://etfmarket.cboe.com/canada/en/fund/BDAY,2026-10-22
+X,BTCY,Purpose Bitcoin Yield ETF,Purpose Investments,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,99793291.0000,1.4300,https://etfmarket.cboe.com/canada/en/fund/BTCY,2026-10-22
+X,CCCX,CI Galaxy Core Multi-Crypto ETF,CI,crypto other than pure spot bitcoin,altcoin / multi-crypto,767938.0000,1.2700,https://etfmarket.cboe.com/canada/en/fund/CCCX,2026-10-22
+X,CMCX,CI Galaxy Multi-Crypto Navigator ETF,CI,crypto other than pure spot bitcoin,altcoin / multi-crypto,812160.0000,1.2000,https://etfmarket.cboe.com/canada/en/fund/CMCX,2026-10-22
+X,DXMC,Dynamic Active Multi-Crypto ETF,Dynamic Funds,crypto other than pure spot bitcoin,altcoin / multi-crypto,10793970.0000,0.4500,https://etfmarket.cboe.com/canada/en/fund/DXMC,2026-10-22
+X,ETC,Evolve Cryptocurrencies ETF,Evolve ETFs,crypto other than pure spot bitcoin,altcoin / multi-crypto,67733598.0000,1.6300,https://etfmarket.cboe.com/canada/en/fund/ETC,2026-10-22
+X,ETHH,Purpose Ether ETF,Purpose Investments,crypto other than pure spot bitcoin,altcoin / multi-crypto,127405842.0000,1.3100,https://etfmarket.cboe.com/canada/en/fund/ETHH,2026-10-22
+X,ETHO.B,Purpose Core Ether ETF,Purpose Investments,crypto other than pure spot bitcoin,altcoin / multi-crypto,58980591.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/ETHO.B,2026-10-22
+X,ETHO.U,Purpose Core Ether ETF,Purpose Investments,crypto other than pure spot bitcoin,altcoin / multi-crypto,908704.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/ETHO.U,2026-10-22
+X,ETHQ,3iQ Ether Staking ETF,3iQ,crypto other than pure spot bitcoin,altcoin / multi-crypto,42522533.0000,1.6600,https://etfmarket.cboe.com/canada/en/fund/ETHQ,2026-10-22
+X,ETHR,Evolve Ether ETF,Evolve ETFs,crypto other than pure spot bitcoin,altcoin / multi-crypto,55788521.0000,1.9700,https://etfmarket.cboe.com/canada/en/fund/ETHR,2026-10-22
+X,ETHX,CI Galaxy Ethereum ETF,CI,crypto other than pure spot bitcoin,altcoin / multi-crypto,10044300.0000,0.7300,https://etfmarket.cboe.com/canada/en/fund/ETHX,2026-10-22
+X,ETHY,Purpose Ether Yield ETF,Purpose Investments,crypto other than pure spot bitcoin,altcoin / multi-crypto,82777171.0000,1.4000,https://etfmarket.cboe.com/canada/en/fund/ETHY,2026-10-22
+X,FETH,Fidelity Advantage Ether ETF,Fidelity,crypto other than pure spot bitcoin,altcoin / multi-crypto,83301484.0000,0.5300,https://etfmarket.cboe.com/canada/en/fund/XTSE:FETH,2026-10-22
+X,HBIX,Harvest Bitcoin Enhanced Income ETF,Harvest Portfolios Group,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,47084310.0000,0.6500,https://etfmarket.cboe.com/canada/en/fund/HBIX,2026-10-22
+X,HBTE,Harvest Bitcoin Leaders Enhanced Income ETF,Harvest Portfolios Group,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,76540200.0000,0.7500,https://etfmarket.cboe.com/canada/en/fund/HBTE,2026-10-22
+X,IBQT,iShares Equity + Bitcoin ETF Portfolio,iShares,crypto other than pure spot bitcoin,name/index mentions other crypto or overlay,1183974.0000,0.2200,https://etfmarket.cboe.com/canada/en/fund/IBQT,2026-10-22
+X,LETH,Evolve Levered Ether ETF,Evolve ETFs,crypto other than pure spot bitcoin,altcoin / multi-crypto,2168941.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/LETH,2026-10-22
+X,SOLA,Evolve Solana ETF,Evolve ETFs,crypto other than pure spot bitcoin,altcoin / multi-crypto,10391698.0000,1.0000,https://etfmarket.cboe.com/canada/en/fund/SOLA,2026-10-22
+X,SOLL,Purpose Solana ETF,Purpose Investments,crypto other than pure spot bitcoin,altcoin / multi-crypto,27876275.0000,0.3900,https://etfmarket.cboe.com/canada/en/fund/SOLL,2026-10-22
+X,SOLQ,3iQ Solana Staking ETF,3iQ,crypto other than pure spot bitcoin,altcoin / multi-crypto,145766070.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/SOLQ,2026-10-22
+X,SOLX,CI Galaxy Solana ETF,CI,crypto other than pure spot bitcoin,altcoin / multi-crypto,1142640.0000,1.6100,https://etfmarket.cboe.com/canada/en/fund/SOLX,2026-10-22
+X,TKN,Ninepoint Crypto and AI Leaders ETF,Ninepoint Partners,crypto other than pure spot bitcoin,altcoin / multi-crypto,21939804.0000,1.6000,https://etfmarket.cboe.com/canada/en/fund/TKN,2026-10-22
+X,XRP,Evolve XRP ETF,Evolve ETFs,crypto other than pure spot bitcoin,altcoin / multi-crypto,45039035.0000,0.7500,https://etfmarket.cboe.com/canada/en/fund/XTSE:XRP,2026-10-22
+X,XRP.U,Evolve XRP ETF,Evolve ETFs,crypto other than pure spot bitcoin,altcoin / multi-crypto,794609.0000,0.7500,https://etfmarket.cboe.com/canada/en/fund/XRP.U,2026-10-22
+X,XRPP,Purpose XRP ETF,Purpose Investments,crypto other than pure spot bitcoin,altcoin / multi-crypto,67847886.0000,0.6900,https://etfmarket.cboe.com/canada/en/fund/XRPP,2026-10-22
+X,XRPQ,3iQ XRP ETF,3iQ,crypto other than pure spot bitcoin,altcoin / multi-crypto,106340438.0000,0.5900,https://etfmarket.cboe.com/canada/en/fund/XRPQ,2026-10-22
+X,AAPU,SavvyLong (2X) AAPL ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),4914980.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:AAPU,2026-10-22
+X,ABXU,SavvyLong (2X) Barrick ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),1692368.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/ABXU,2026-10-22
+X,ALPU,SavvyLong (2X) GOOGL ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),12254640.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/ALPU,2026-10-22
+X,AMDU,SavvyLong (2X) AMD ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),3464907.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/AMDU,2026-10-22
+X,AMZU,SavvyLong (2X) AMZN ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),11023373.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:AMZU,2026-10-22
+X,BITI,BetaPro Inverse Bitcoin ETF - CAD,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: Inverse),16551938.0000,2.0500,https://etfmarket.cboe.com/canada/en/fund/XTSE:BITI,2026-10-22
+X,BNKU,MegaLong (3X) Canadian Banks Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 3x (name: 3X),25846800.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:BNKU,2026-10-22
+X,CCOU,SavvyLong (2X) Cameco ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),1510763.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/CCOU,2026-10-22
+X,CFOD,BetaPro S&P/TSX Capped Financials -2x Daily Bear ETF - CAD,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),11154083.0000,2.0000,https://etfmarket.cboe.com/canada/en/fund/CFOD,2026-10-22
+X,CFOU,BetaPro S&P/TSX Capped Financials 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),86059259.0000,1.6200,https://etfmarket.cboe.com/canada/en/fund/CFOU,2026-10-22
+X,CGMD,MegaShort (-3X) Canadian Gold Miners Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: MegaShort),3668385.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/CGMD,2026-10-22
+X,CGMU,MegaLong (3X) Canadian Gold Miners Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 3x (name: 3X),18495330.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:CGMU,2026-10-22
+X,CNDD,BetaPro S&P/TSX 60 -2x Daily Bear ETF - CAD,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),19792076.0000,1.7800,https://etfmarket.cboe.com/canada/en/fund/CNDD,2026-10-22
+X,CNDI,BetaPro S&P/TSX 60 Daily Inverse ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: Inverse),14534204.0000,1.9700,https://etfmarket.cboe.com/canada/en/fund/CNDI,2026-10-22
+X,CNDU,BetaPro S&P/TSX 60 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),90395690.0000,1.6100,https://etfmarket.cboe.com/canada/en/fund/CNDU,2026-10-22
+X,CNQU,SavvyLong (2X) Cdn Natural Resources ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),2845675.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/CNQU,2026-10-22
+X,COID,SavvyShort (-2X) COIN ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),428196.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/COID,2026-10-22
+X,COIU,SavvyLong (2X) COIN ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),1334158.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/COIU,2026-10-22
+X,COMU,SavvyLong 2X CIBC (CM) Equity-Linked ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),3790360.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/COMU,2026-10-22
+X,CSUU,SavvyLong (2X) Constellation Software ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),3023275.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/CSUU,2026-10-22
+X,GASD,SavvyShort Geared Natural Gas ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),4805675.0000,2.0000,https://etfmarket.cboe.com/canada/en/fund/GASD,2026-10-22
+X,GASU,SavvyShort Geared Crude Oil ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),1732745.0000,2.0000,https://etfmarket.cboe.com/canada/en/fund/GASU,2026-10-22
+X,GDXD,BetaPro Canadian Gold Miners -2x Daily Bear ETF - CAD,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),18857506.0000,1.8200,https://etfmarket.cboe.com/canada/en/fund/XTSE:GDXD,2026-10-22
+X,GDXU,BetaPro Canadian Gold Miners 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),207435864.0000,1.3500,https://etfmarket.cboe.com/canada/en/fund/XTSE:GDXU,2026-10-22
+X,GLDD,BetaPro Gold Bullion -2x Daily Bear ETF - CAD,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),2897283.0000,2.0200,https://etfmarket.cboe.com/canada/en/fund/XTSE:GLDD,2026-10-22
+X,GLDU,BetaPro Gold Bullion 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),45628185.0000,1.6000,https://etfmarket.cboe.com/canada/en/fund/GLDU,2026-10-22
+X,HND,BetaPro Natural Gas -2x Daily Bear ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),49271000.0000,1.3400,https://etfmarket.cboe.com/etf/HND,n/a
+X,HNU,BetaPro Natural Gas 2x Daily Bull ETF - CAD,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),216945258.0000,1.3800,https://etfmarket.cboe.com/canada/en/fund/HNU,2026-10-22
+X,HOD,BetaPro Crude Oil Inverse Leveraged Daily Bear ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: Inverse),257583000.0000,1.4500,https://etfmarket.cboe.com/etf/HOD,n/a
+X,HOU,BetaPro Crude Oil Leveraged Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (description: 2x),159792589.0000,1.4000,https://etfmarket.cboe.com/canada/en/fund/HOU,2026-10-22
+X,HQD,BetaPro NASDAQ-100 -2x Daily Bear ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),26545994.0000,1.5700,https://etfmarket.cboe.com/canada/en/fund/HQD,2026-10-22
+X,METU,SavvyLong (2X) META ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),3824116.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:METU,2026-10-22
+X,MSFU,SavvyLong (2X) MSFT ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),8325680.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:MSFU,2026-10-22
+X,MSTU,SavvyLong (2X) MSTR ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:MSTU,n/a
+X,MSTZ,SavvyShort (-2X) MSTR ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),2272697.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:MSTZ,2026-10-22
+X,MUU,SavvyLong (2X) Micron ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),25823127.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:MUU,2026-10-22
+X,NBCU,SavvyLong 2X NBC (NA) Equity-Linked ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),2579490.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/NBCU,2026-10-22
+X,NRGD,BetaPro S&P/TSX Capped Energy -2x Daily Bear ETF - CAD,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),3659648.0000,2.0600,https://etfmarket.cboe.com/canada/en/fund/XTSE:NRGD,2026-10-22
+X,NRGU,BetaPro S&P/TSX Capped Energy 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),49651098.0000,1.6400,https://etfmarket.cboe.com/canada/en/fund/XTSE:NRGU,2026-10-22
+X,NVDD,SavvyShort (-2X) NVDA ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),1257925.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:NVDD,2026-10-22
+X,NVDU,SavvyLong (2X) NVDA ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),13855360.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:NVDU,2026-10-22
+X,OILD,SavvyLong Geared Natural Gas ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse (description),4969721.0000,2.0000,https://etfmarket.cboe.com/canada/en/fund/XTSE:OILD,2026-10-22
+X,OILU,SavvyLong Geared Crude Oil ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (description: 2X),25273838.0000,2.0000,https://etfmarket.cboe.com/canada/en/fund/XTSE:OILU,2026-10-22
+X,ORBU,SavvyLong (2X) SpaceX ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),3082424.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/ORBU,2026-10-22
+X,PLTU,SavvyLong (2X) PLTR ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),8342600.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:PLTU,2026-10-22
+X,QQI,BetaPro Nasdaq-100 Daily Inverse ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: Inverse),6709411.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:QQI,2026-10-22
+X,QQQD,MegaShort (-3X) NASDAQ-100 Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: MegaShort),4182320.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:QQQD,2026-10-22
+X,QQQU,MegaLong (3X) NASDAQ-100 Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 3x (name: 3X),13823145.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:QQQU,2026-10-22
+X,QQU,BetaPro NASDAQ-100 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),453262492.0000,1.4300,https://etfmarket.cboe.com/canada/en/fund/QQU,2026-10-22
+X,RBCU,SavvyLong 2X RBC (RY) Equity-Linked ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),2681160.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/RBCU,2026-10-22
+X,RBNU,SavvyLong (2X) HOOD ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),3288444.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/RBNU,2026-10-22
+X,SCND,BetaPro -3x S&P/TSX 60 Daily Leveraged Bear Alternative ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -3x),1687714.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/SCND,2026-10-22
+X,SHPD,SavvyShort (-2X) Shopify ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),1734800.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/SHPD,2026-10-22
+X,SHPU,SavvyLong (2X) Shopify ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),1998495.0000,1.2500,https://etfmarket.cboe.com/canada/en/fund/XTSE:SHPU,2026-10-22
+X,SLVD,BetaPro Silver -2x Daily Bear ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),16953063.0000,1.9900,https://etfmarket.cboe.com/canada/en/fund/SLVD,2026-10-22
+X,SLVU,BetaPro Silver 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),128085754.0000,1.3800,https://etfmarket.cboe.com/canada/en/fund/SLVU,2026-10-22
+X,SOXD,MegaShort (-3X) US Semiconductors Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: MegaShort),6467917.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/SOXD,2026-10-22
+X,SOXL,BetaPro 3x Semiconductor Daily Leveraged Bull Alternative ETF,Global X,leveraged (>=1.45x) / inverse,leverage 3x (name: 3x),122879148.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/NEOE:SOXL,2026-10-22
+X,SOXS,BetaPro -3x Semiconductor Daily Leveraged Bear Alternative ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -3x),17463336.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/NEOE:SOXS,2026-10-22
+X,SOXU,MegaLong (3X) US Semiconductors Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 3x (name: 3X),27052913.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/SOXU,2026-10-22
+X,SPXD,BetaPro S&P 500 -2x Daily Bear ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -2x),47895528.0000,1.6000,https://etfmarket.cboe.com/canada/en/fund/XTSE:SPXD,2026-10-22
+X,SPXI,BetaPro S&P 500 Daily Inverse ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: Inverse),25381242.0000,1.7500,https://etfmarket.cboe.com/canada/en/fund/SPXI,2026-10-22
+X,SPXU,BetaPro S&P 500 2x Daily Bull ETF,Global X,leveraged (>=1.45x) / inverse,leverage 2x (name: 2x),179186783.0000,1.7500,https://etfmarket.cboe.com/canada/en/fund/XTSE:SPXU,2026-10-22
+X,SPYD,MegaShort (-3X) S&P 500 Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: MegaShort),5006243.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:SPYD,2026-10-22
+X,SPYU,MegaLong (3X) S&P 500 Daily Leveraged Alternative ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 3x (name: 3X),16275545.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:SPYU,2026-10-22
+X,SQQQ,BetaPro -3x Nasdaq-100 Daily Leveraged Bear Alternative ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -3x),34337191.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:SQQQ,2026-10-22
+X,SRSL,BetaPro -3x Russell 2000 Daily Leveraged Bear Alternative ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -3x),2303298.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/SRSL,2026-10-22
+X,SSPX,BetaPro -3x S&P 500 Daily Leveraged Bear Alternative ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -3x),2003115.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/SSPX,2026-10-22
+X,STLT,BetaPro -3x US Treasury 20+ Year Daily Leveraged Bear Alternative ETF,Global X,leveraged (>=1.45x) / inverse,inverse/short (name: -3x),5804290.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/STLT,2026-10-22
+X,TCND,BetaPro 3x S&P/TSX 60 Daily Leveraged Bull Alternative ETF,Global X,leveraged (>=1.45x) / inverse,leverage 3x (name: 3x),6016166.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/TCND,2026-10-22
+X,TDU,SavvyLong 2X TDB (TD) Equity-Linked ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),,1.2500,https://etfmarket.cboe.com/canada/en/fund/TDU,n/a
+X,TQQQ,BetaPro 3x Nasdaq-100 Daily Leveraged Bull Alternative ETF,Global X,leveraged (>=1.45x) / inverse,leverage 3x (name: 3x),135676260.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:TQQQ,2026-10-22
+X,TRSL,BetaPro 3x Russell 2000 Daily Leveraged Bull Alternative ETF,Global X,leveraged (>=1.45x) / inverse,leverage 3x (name: 3x),2427997.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/TRSL,2026-10-22
+X,TSLD,SavvyShort (-2X) TSLA ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,inverse/short (name: SavvyShort),871460.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/TSLD,2026-10-22
+X,TSLU,SavvyLong (2X) TSLA ETF,LongPoint Asset Management,leveraged (>=1.45x) / inverse,leverage 2x (name: 2X),11162608.0000,1.5500,https://etfmarket.cboe.com/canada/en/fund/TSLU,2026-10-22
+X,TSPX,BetaPro 3x S&P 500 Daily Leveraged Bull Alternative ETF,Global X,leveraged (>=1.45x) / inverse,leverage 3x (name: 3x),13194896.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:TSPX,2026-10-22
+X,TTLT,BetaPro 3x US Treasury 20+ Year Daily Leveraged Bull Alternative ETF,Global X,leveraged (>=1.45x) / inverse,leverage 3x (name: 3x),4679919.0000,1.1500,https://etfmarket.cboe.com/canada/en/fund/TTLT,2026-10-22
+X,VOLX,BetaPro S&P 500 Vix Short-Term Futures ETF - CAD,Global X,leveraged (>=1.45x) / inverse,"daily leveraged product (name: BetaPro), >=2x",21446159.0000,1.1800,https://etfmarket.cboe.com/canada/en/fund/VOLX,2026-10-22
+X,AAPP,Global X Apple PowerStock ETF,Global X,single-stock,name/index: Apple,2088261.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/AAPP,2026-10-22
+X,ABHI,Ninepoint Barrick HighShares ETF,Ninepoint Partners,single-stock,name/index: Barrick,25300254.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/ABHI,2026-10-22
+X,AEME,Harvest Agnico Eagle Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Agnico,40749280.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:AEME,2026-10-22
+X,AMDY,Harvest AMD Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: AMD,161930293.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:AMDY,2026-10-22
+X,AMHE,Harvest Amazon Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Amazon,162201438.0000,1.8100,https://etfmarket.cboe.com/canada/en/fund/AMHE,2026-10-22
+X,AMZH,Harvest Amazon High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Amazon,32758215.0000,0.9900,https://etfmarket.cboe.com/canada/en/fund/AMZH,2026-10-22
+X,AMZP,Global X Amazon PowerStock ETF,Global X,single-stock,name/index: Amazon,1870662.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:AMZP,2026-10-22
+X,APLE,Harvest Apple Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Apple,179271000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/APLE,2026-10-22
+X,APLY,Apple (AAPL) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Apple,32974956.0000,1.7600,https://etfmarket.cboe.com/canada/en/fund/NEOE:APLY,2026-10-22
+X,ASME,Harvest ASML Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,1129340.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/ASME,2026-10-21
+X,ATDY,Purpose Couche-Tard (ATD) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,1319179.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/ATDY,2026-10-22
+X,AVGY,Harvest Broadcom Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Broadcom,153422030.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/AVGY,2026-10-22
+X,BCEE,Harvest BCE Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,17798520.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/BCEE,2026-10-22
+X,BCHI,Ninepoint BCE HighShares ETF,Ninepoint Partners,single-stock,look-through: one holding = 124%,20556887.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/BCHI,2026-10-22
+X,BLKY,Harvest Block Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,2836305.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/BLKY,2026-10-22
+X,BNSY,Purpose Scotiabank (BNS) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,3065698.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/BNSY,2026-10-22
+X,BNY,Purpose Brookfield (BN) Yield Shares ETF,Purpose Investments,single-stock,name/index: Brookfield,3215238.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/BNY,2026-10-22
+X,BRKE,Harvest Berkshire Hathaway Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Berkshire,1585050.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/BRKE,2026-10-21
+X,BRKY,Berkshire Hathaway (BRK) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Berkshire,58431197.0000,1.8000,https://etfmarket.cboe.com/canada/en/fund/BRKY,2026-10-22
+X,CCHI,Ninepoint Cameco HighShares ETF,Ninepoint Partners,single-stock,look-through: one holding = 125%,44344886.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/CCHI,2026-10-22
+X,CCOE,Harvest Cameco Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,42497025.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/CCOE,2026-10-22
+X,CNQE,Harvest CNQ Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,11084735.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/CNQE,2026-10-22
+X,CNQY,Purpose Canadian Natural Resources (CNQ) Yield Shares ETF,Purpose Investments,single-stock,name/index: Canadian Natural,6014891.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/CNQY,2026-10-22
+X,CNYE,Harvest Coinbase Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Coinbase,108370325.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:CNYE,2026-10-22
+X,CONY,Harvest Coinbase High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Coinbase,12762750.0000,0.9800,https://etfmarket.cboe.com/canada/en/fund/XTSE:CONY,2026-10-22
+X,COSY,Harvest Costco Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Costco,143778000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/COSY,2026-10-22
+X,CQHI,Ninepoint Canadian Natural Resources HighShares ETF,Ninepoint Partners,single-stock,name/index: Canadian Natural,25028843.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/CQHI,2026-10-22
+X,CRCY,Harvest Circle Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,86481900.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:CRCY,2026-10-22
+X,CRHI,Ninepoint CNR HighShares ETF,Ninepoint Partners,single-stock,look-through: one holding = 123%,38309303.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/CRHI,2026-10-22
+X,CRWY,Harvest CrowdStrike Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,125475000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:CRWY,2026-10-22
+X,CSHI,Ninepoint Constellation Software HighShares ETF,Ninepoint Partners,single-stock,name/index: Constellation Software,11166469.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/XTSE:CSHI,2026-10-22
+X,CSUC,Ninepoint Constellation Software CoreShares ETF,Ninepoint Partners,single-stock,name/index: Constellation Software,1795774.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/CSUC,2026-10-22
+X,DOLY,Purpose Dollarama (DOL) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,3049016.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/DOLY,2026-10-22
+X,ENBE,Harvest Enbridge Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Enbridge,14031625.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/ENBE,2026-10-22
+X,ENBY,Purpose Enbridge (ENB) Yield Shares ETF,Purpose Investments,single-stock,name/index: Enbridge,5527716.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/ENBY,2026-10-22
+X,ENHI,Ninepoint Enbridge HighShares ETF,Ninepoint Partners,single-stock,name/index: Enbridge,24529095.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/XTSE:ENHI,2026-10-22
+X,GOGY,Harvest Alphabet Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Alphabet,160154913.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/GOGY,2026-10-22
+X,GOHI,Ninepoint Alphabet HighShares ETF,Ninepoint Partners,single-stock,name/index: Alphabet,2907081.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/GOHI,2026-10-22
+X,GOOP,Global X Alphabet PowerStock ETF,Global X,single-stock,name/index: Alphabet,1791859.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:GOOP,2026-10-22
+X,GRNI,BMO Brookfield Global Renewables Infrastructure Fund ETF,BMO,single-stock,name/index: Brookfield,9542130.0000,0.9000,https://etfmarket.cboe.com/canada/en/fund/NEOE:GRNI,2026-10-22
+X,HHIC,Harvest Canadian High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,288055000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/HHIC,2026-10-22
+X,HHII,Harvest International High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,29984565.0000,0.6500,https://etfmarket.cboe.com/canada/en/fund/HHII,2026-10-22
+X,HHIS,Harvest Diversified High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,2081639030.0000,1.8800,https://etfmarket.cboe.com/canada/en/fund/HHIS,2026-10-22
+X,HODY,Harvest Robinhood Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,90864563.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/HODY,2026-10-22
+X,HONE,Harvest All-In-One High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,23935703.0000,0.0000,https://etfmarket.cboe.com/canada/en/fund/HONE,2026-10-21
+X,INHI,Ninepoint Intel HighShares ETF,Ninepoint Partners,single-stock,name/index: Intel,5093022.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/INHI,2026-10-22
+X,INTE,Harvest Intel Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Intel,1157738.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/INTE,2026-10-21
+X,JAVA,JPMorgan US Value Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,118912500.0000,0.4400,https://etfmarket.cboe.com/canada/en/fund/XTSE:JAVA,2026-10-21
+X,JBND,JPMorgan US Bond Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,367852800.0000,0.2500,https://etfmarket.cboe.com/canada/en/fund/XTSE:JBND,2026-10-21
+X,JCOR,JPMorgan US Core Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,78820500.0000,0.4400,https://etfmarket.cboe.com/canada/en/fund/JCOR,2026-10-21
+X,JEPH,JPMorgan US Equity Premium Income Active (Hedged) ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,18697500.0000,0.3500,https://etfmarket.cboe.com/canada/en/fund/JEPH,2026-10-21
+X,JEPI,JPMorgan US Equity Premium Income Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,441054000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:JEPI,2026-10-21
+X,JEPQ,JPMorgan Nasdaq Equity Premium Income Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,275373000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:JEPQ,2026-10-21
+X,JGLO,JPMorgan Global Select Equity Active ETF (CA),J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,266584500.0000,0.4700,https://etfmarket.cboe.com/canada/en/fund/XTSE:JGLO,2026-10-21
+X,JGRO,JPMorgan US Growth Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,50490000.0000,0.4400,https://etfmarket.cboe.com/canada/en/fund/XTSE:JGRO,2026-10-21
+X,JIDE,JPMorgan International Developed Equity Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,63205500.0000,0.5500,https://etfmarket.cboe.com/canada/en/fund/XTSE:JIDE,2026-10-21
+X,JNJY,Harvest JnJ Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,2888760.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/JNJY,2026-10-22
+X,JPHE,Harvest JPHE Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,2758860.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:JPHE,2026-10-22
+X,JPIE,JPMorgan Income Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,425012800.0000,0.3900,https://etfmarket.cboe.com/canada/en/fund/XTSE:JPIE,2026-10-21
+X,JPQH,JPMorgan Nasdaq Equity Premium Income Active (Hedged) ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,13497750.0000,0.3500,https://etfmarket.cboe.com/canada/en/fund/JPQH,2026-10-21
+X,JPST,JPMorgan US Ultra-Short Income Active ETF,J.P. Morgan Asset Management,single-stock,name/index: JPMorgan,43032000.0000,0.1800,https://etfmarket.cboe.com/canada/en/fund/XTSE:JPST,2026-10-21
+X,JPYS,Yield Shares (JPYS) Purpose ETF,Purpose Investments,single-stock,name/index: Yield Shares,1590211.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/JPYS,2026-10-22
+X,LLHE,Harvest Eli Lilly Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Eli Lilly,270101368.0000,1.8300,https://etfmarket.cboe.com/canada/en/fund/LLHE,2026-10-22
+X,LLYH,Harvest Eli Lilly High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Eli Lilly,43725080.0000,0.9900,https://etfmarket.cboe.com/canada/en/fund/LLYH,2026-10-22
+X,METE,Harvest Meta Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,148701210.0000,1.8900,https://etfmarket.cboe.com/canada/en/fund/METE,2026-10-22
+X,MSFH,Harvest Microsoft High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Microsoft,61288920.0000,0.9900,https://etfmarket.cboe.com/canada/en/fund/MSFH,2026-10-22
+X,MSFY,Microsoft (MSFT) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Microsoft,41536183.0000,1.7500,https://etfmarket.cboe.com/canada/en/fund/NEOE:MSFY,2026-10-22
+X,MSHE,Harvest Microsoft Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Microsoft,209520325.0000,1.8400,https://etfmarket.cboe.com/canada/en/fund/MSHE,2026-10-22
+X,MSTE,Harvest Strategy Inc. Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Strategy Inc,517225860.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/MSTE,2026-10-22
+X,MSTY,Harvest Strategy Inc. High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Strategy Inc,58271910.0000,0.8000,https://etfmarket.cboe.com/canada/en/fund/XTSE:MSTY,2026-10-22
+X,MUHE,Harvest Micron Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,7340045.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/MUHE,2026-10-21
+X,NFLY,Harvest Netflix Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Netflix,26389000.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:NFLY,2026-10-22
+X,NOVY,Harvest Novo Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,9304330.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/NOVY,2026-10-22
+X,NVDH,Harvest NVIDIA High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: NVIDIA,43665140.0000,0.9900,https://etfmarket.cboe.com/canada/en/fund/NVDH,2026-10-22
+X,NVDP,Global X NVIDIA PowerStock ETF,Global X,single-stock,name/index: NVIDIA,1799899.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/NVDP,2026-10-22
+X,NVHE,Harvest NVIDIA Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: NVIDIA,277991915.0000,1.8500,https://etfmarket.cboe.com/canada/en/fund/NVHE,2026-10-22
+X,NVHI,Ninepoint NVIDIA HighShares ETF,Ninepoint Partners,single-stock,name/index: NVIDIA,3114918.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/NVHI,2026-10-22
+X,ORCY,Harvest Oracle Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Oracle,30819330.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/ORCY,2026-10-22
+X,PLHI,Ninepoint Palantir HighShares ETF,Ninepoint Partners,single-stock,name/index: Palantir,4279185.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/PLHI,2026-10-22
+X,PLTE,Harvest Palantir Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Palantir,262205670.0000,1.8900,https://etfmarket.cboe.com/canada/en/fund/PLTE,2026-10-22
+X,RBCY,Purpose RBC (RY) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,3459438.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/RBCY,2026-10-22
+X,RDDY,Harvest Reddit Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,95507780.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/RDDY,2026-10-22
+X,RYHE,Harvest Enhanced High Income RY-Linked Shares ETF,Harvest Portfolios Group,single-stock,look-through: one holding = 126%,5693975.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/RYHE,2026-10-22
+X,RYHI,Ninepoint RY-Linked HighShares ETF,Ninepoint Partners,single-stock,look-through: one holding = 125%,29435296.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/RYHI,2026-10-22
+X,SHHI,Ninepoint Shopify HighShares ETF,Ninepoint Partners,single-stock,name/index: Shopify,42498666.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/SHHI,2026-10-22
+X,SHPE,Harvest Shopify Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Shopify,33125470.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/SHPE,2026-10-22
+X,SHPY,Purpose Shopify (SHOP) Yield Shares ETF,Purpose Investments,single-stock,name/index: Shopify,15727403.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/SHPY,2026-10-22
+X,SOFY,Harvest SoFi Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,93908738.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/SOFY,2026-10-22
+X,SPCP,Global X SpaceX PowerStock ETF,Global X,single-stock,look-through: one holding = 133%,1704035.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/SPCP,2026-10-22
+X,SPXE,Harvest SpaceX Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,150797010.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/XTSE:SPXE,2026-10-22
+X,SPXY,Purpose SpaceX (SPCX) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,24658708.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/SPXY,2026-10-22
+X,SUHE,Harvest Suncor Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Suncor,7831040.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/SUHE,2026-10-22
+X,SUHI,Ninepoint Suncor HighShares ETF,Ninepoint Partners,single-stock,name/index: Suncor,21671605.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/SUHI,2026-10-22
+X,TDHE,Harvest Enhanced High Income TD-Linked Shares ETF,Harvest Portfolios Group,single-stock,look-through: one holding = 128%,5326228.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/TDHE,2026-10-22
+X,TDHI,Ninepoint TD-Linked HighShares ETF,Ninepoint Partners,single-stock,look-through: one holding = 124%,31514720.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/TDHI,2026-10-22
+X,TDY,Purpose TD (TD) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,4037847.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/TDY,2026-10-22
+X,TEHE,Harvest TELUS Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Income Shares,9389625.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/TEHE,2026-10-22
+X,TSHI,Ninepoint Tesla HighShares ETF,Ninepoint Partners,single-stock,name/index: Tesla,2948084.0000,0.2900,https://etfmarket.cboe.com/canada/en/fund/TSHI,2026-10-22
+X,TSLP,Global X Tesla PowerStock ETF,Global X,single-stock,name/index: Tesla,1938383.0000,0.1500,https://etfmarket.cboe.com/canada/en/fund/XTSE:TSLP,2026-10-22
+X,TSLY,Harvest Tesla Enhanced High Income Shares ETF,Harvest Portfolios Group,single-stock,name/index: Tesla,281194813.0000,1.8800,https://etfmarket.cboe.com/canada/en/fund/XTSE:TSLY,2026-10-22
+X,TY,Purpose Telus (T) Yield Shares ETF,Purpose Investments,single-stock,name/index: Yield Shares,4111968.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/TY,2026-10-22
+X,YAMD,AMD (AMD) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: AMD,29413690.0000,1.7900,https://etfmarket.cboe.com/canada/en/fund/NEOE:YAMD,2026-10-22
+X,YAMZ,Amazon (AMZN) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Amazon,104083058.0000,1.7200,https://etfmarket.cboe.com/canada/en/fund/YAMZ,2026-10-22
+X,YAVG,Broadcom (AVGO) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Broadcom,20147991.0000,1.4000,https://etfmarket.cboe.com/canada/en/fund/NEOE:YAVG,2026-10-22
+X,YCON,Coinbase (COIN) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Coinbase,25289462.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/YCON,2026-10-22
+X,YCST,Costco (COST) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Costco,11041612.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/YCST,2026-10-22
+X,YGOG,Alphabet (GOOGL) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Alphabet,58851358.0000,1.7500,https://etfmarket.cboe.com/canada/en/fund/YGOG,2026-10-22
+X,YMAG,Tech Innovators Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Yield Shares,13534233.0000,0.5000,https://etfmarket.cboe.com/canada/en/fund/NEOE:YMAG,2026-10-22
+X,YMET,META (META) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Yield Shares,34819843.0000,1.7600,https://etfmarket.cboe.com/canada/en/fund/YMET,2026-10-22
+X,YNET,Netflix (NFLX) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Netflix,16936594.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/YNET,2026-10-22
+X,YNVD,NVIDIA (NVDA) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: NVIDIA,197477974.0000,1.6800,https://etfmarket.cboe.com/canada/en/fund/YNVD,2026-10-22
+X,YPLT,Palantir (PLTR) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Palantir,27722776.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/YPLT,2026-10-22
+X,YTSL,Tesla (TSLA) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: Tesla,444472730.0000,1.6500,https://etfmarket.cboe.com/canada/en/fund/YTSL,2026-10-22
+X,YUNH,UnitedHealth Group (UNH) Yield Shares Purpose ETF,Purpose Investments,single-stock,name/index: UnitedHealth,36085759.0000,0.4000,https://etfmarket.cboe.com/canada/en/fund/YUNH,2026-10-22
+X,ZGI,BMO Global Infrastructure Index ETF,BMO,single-stock,name/index: Brookfield,514172012.0000,0.6100,https://etfmarket.cboe.com/canada/en/fund/ZGI,2026-10-22
+X,XCBU.U,iShares U.S. IG Corporate Bond Index ETF,iShares,variant of unlisted base,,4730508.0000,,https://etfmarket.cboe.com/canada/en/fund/XCBU.U,2026-10-22
+X,XSHU.U,iShares 1-5 Year U.S. IG Corporate Bond Index ETF,iShares,variant of unlisted base,,8354573.0000,,https://etfmarket.cboe.com/canada/en/fund/XSHU.U,2026-10-22
+X,XSTP.U,iShares 0-5 Year TIPS Bond Index ETF,iShares,variant of unlisted base,,16178658.0000,,https://etfmarket.cboe.com/canada/en/fund/XSTP.U,2026-10-22
+X,XUS.U,iShares Core S&P 500 Index ETF,iShares,variant of unlisted base,,395871134.0000,,https://etfmarket.cboe.com/canada/en/fund/XUS.U,2026-10-22
+X,XUSC.U,iShares S&P 500 3% Capped Index ETF,iShares,variant of unlisted base,,37524331.0000,,https://etfmarket.cboe.com/canada/en/fund/XUSC.U,2026-10-22
+X,ZNQ.U,BMO NASDAQ 100 Equity Index ETF,BMO,variant of unlisted base,,50474944.0000,,https://etfmarket.cboe.com/canada/en/fund/ZNQ.U,2026-10-22
