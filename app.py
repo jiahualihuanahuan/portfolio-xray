@@ -7,6 +7,8 @@ from collections import defaultdict, Counter
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from tickers import norm_ticker, parse_user_symbol   # shared ticker normalizer (same rules as build_index.py)
 DATA = os.path.join(HERE, 'data')
 csv.field_size_limit(10**8)
 
@@ -26,7 +28,8 @@ class Index:
             if r['isin']: s.isin2fund.setdefault(r['isin'], r['m'] + ':' + r['ticker'])
             if r['name']: s.name2fund.setdefault(normname(r['name']), r['m'] + ':' + r['ticker'])
         s.rows = defaultdict(list)        # fundkey -> raw csv lines
-        s.tkrmap = defaultdict(Counter)   # (region, tkr) -> Counter(id-key)
+        s.tkrmap = defaultdict(Counter)   # (exchange_country|region, canonical ticker) -> Counter(id-key)
+        tany = defaultdict(Counter)       # canonical ticker -> Counter(id-key), any listing country
         s.secmeta = {}                    # key -> (name, tkr, sec, cty, ac, ccy)
         parts = json.load(open(os.path.join(DATA, 'meta.json'))).get('holdings_parts', ['holdings.csv.gz'])
         miss = [p for p in parts if not os.path.exists(os.path.join(DATA, p))]
@@ -44,8 +47,12 @@ class Index:
                 ik = idkey(isin, cusip)
                 if ik and len(name) > 3 and nac(row[10]) == 'Equity': n2i[normname(name)].add(ik)
                 if ik and tkr and tkr not in ('-', 'N/A'):
-                    s.tkrmap[(region(row[9], row[11]), tkr.upper())][ik] += 1
+                    s.tkrmap[(region(row[9], row[11]), tkr.upper())][ik] += 1          # legacy CA/X namespace
+                    if rexc(row): s.tkrmap[(rexc(row), tkr.upper())][ik] += 1          # listing-country namespace
+                    if rexc(row): tany[tkr.upper()][ik] += 1
         s.tkr_best = {k: c.most_common(1)[0][0] for k, c in s.tkrmap.items()}
+        s.tkr_any = {k: c.most_common(1)[0][0] for k, c in tany.items()}
+        del tany
         del s.tkrmap
         s.name2id = {k: next(iter(v)) for k, v in n2i.items() if len(v) == 1 and len(k) >= 4}
         del n2i
@@ -55,20 +62,20 @@ class Index:
                 sec = nsec(r[8]); cty = r[9]
                 if sec in ('Unknown', 'Other', 'Cash and/or Derivatives') or sec.startswith('Open End'): sec = ''
                 if not sec and not cty: continue
-                k = s.seckey(r[3], r[4], r[5], r[6], r[9], r[11])
+                k = s.seckey(r[3], r[4], r[5], r[6], r[9], r[11], '', rexc(r))
                 mm = s.secmeta.setdefault(k, ['', ''])
                 if not mm[0] and sec and sec.upper() == sec.upper() and len(sec) < 40: mm[0] = sec
                 if not mm[1] and cty: mm[1] = ncty(cty)
 
     def fund_has(s, fk): return fk in s.funds and fk in s.rows
 
-    def seckey(s, name, tkr, isin, cusip, cty, ccy, ac=''):
+    def seckey(s, name, tkr, isin, cusip, cty, ccy, ac='', exc=''):
         ik = idkey(isin, cusip)
         if ik: return ik
         t = (tkr or '').upper()
         if t and t not in ('-', 'N/A', 'CASH'):
             rg = region(cty, ccy)
-            return s.tkr_best.get((rg, t)) or 'T:%s:%s' % (rg, t)
+            return (exc and s.tkr_best.get((exc, t))) or s.tkr_best.get((rg, t)) or 'T:%s:%s' % (rg, t)
         nn = normname(name)
         if nac(ac) not in ('Fixed Income', 'Cash & Equivalents', 'Derivatives') and nn in s.name2id: return s.name2id[nn]
         return 'N:' + nn
@@ -82,6 +89,7 @@ def idkey(isin, cusip):
         return 'C:' + isin[2:11] if isin[:2] in ('US', 'CA') else 'I:' + isin
     return None
 
+def rexc(row): return row[14] if len(row) > 14 else ''     # exchange_country column (ISO-2) or ''
 def region(cty, ccy=''):
     c = (cty or '').strip().upper()
     if c in ('CANADA', 'CA', 'CAN'): return 'CA'
@@ -145,8 +153,13 @@ US_SUF = re.compile(r'(\.US|:US|-US)$', re.I)
 US_PRE = re.compile(r'^(NYSE|NASDAQ|ARCA|NYSEARCA|BATS|AMEX|XNAS|XNYS)[:.]', re.I)
 
 def parse_symbol(sym):
-    s = (sym or '').strip().upper().replace(' ', '')
+    s = ' '.join((sym or '').strip().upper().split())
     hint = None
+    if re.search(r' [A-Z]{2}$| (EQUITY|PFD)$|/|^[A-Z ]+:', s) or re.match(r'^\S+ [A-Z]$', s):   # 'TSLA US', 'RY CN', 'BRK/B', 'BRK B', 'TSX:RY'
+        t, e = parse_user_symbol(s)
+        if t and ' ' not in t:
+            s = t; hint = e if e in ('CA', 'US') else None
+    s = s.replace(' ', '')
     if CA_PRE.search(s): s = CA_PRE.sub('', s); hint = 'CA'
     if US_PRE.search(s): s = US_PRE.sub('', s); hint = 'US'
     if CA_SUF.search(s): s = CA_SUF.sub('', s); hint = 'CA'
@@ -180,12 +193,18 @@ def resolve_symbol(sym, ccy):
                 return 'fundgap', fk, 'ETF is in our %s universe but holdings not collected: %s' % (m, u.get('gap') or 'no holdings file')
         if hint and m == hint and not any((m, c) in IDX.univ for c in cands):
             pass
-    # direct stock
-    rg = 'CA' if (order[0] == 'CA' and (hint == 'CA' or ccy == 'CAD')) else 'X'
+    # direct stock: canonical ticker (tickers.norm_ticker) looked up in its listing country first, then anywhere
     base = s.replace('.U', '') if s.endswith('.U') else s
-    for t in (base, base.replace('.', '-'), base.replace('-', '.'), base.replace('.', ' '), base.replace('.', '/')):
-        k = IDX.tkr_best.get((rg, t)) or IDX.tkr_best.get(('X' if rg == 'CA' else 'CA', t))
+    base = norm_ticker(base)[0] or base
+    pref = hint or ('CA' if ccy == 'CAD' else 'US' if ccy == 'USD' else '')
+    regs = list(dict.fromkeys(x for x in (pref, 'CA' if pref == 'CA' else 'X', 'US', 'CA', 'X') if x))
+    for t in dict.fromkeys((base, base.replace('-', '.'))):
+        for rg in regs:
+            k = IDX.tkr_best.get((rg, t))
+            if k: return 'stock', k, ''
+        k = IDX.tkr_any.get(t)
         if k: return 'stock', k, ''
+    rg = 'CA' if pref == 'CA' else 'X'
     return 'stock', 'T:%s:%s' % (rg, base), 'symbol not matched to any ISIN/CUSIP in our holdings data; shown as-is with no classification'
 
 # ---------------- spreadsheet parsing ----------------
@@ -264,7 +283,8 @@ def positions(rows, hdr, mp):
         g = lambda f: (r[mp[f]] if f in mp and mp[f] is not None and mp[f] < len(r) else '')
         sym = str(g('symbol')).strip()
         if not sym or re.match(r'^(total|subtotal|cash total|account|grand total)', sym, re.I): continue
-        p = dict(symbol=sym, name=str(g('name')).strip(), qty=num(g('quantity')), mv=num(g('market_value')), price=num(g('price')),
+        tk, ex = parse_user_symbol(sym)
+        p = dict(symbol=sym, ticker=parse_symbol(sym)[0] if ex in ('', 'CA', 'US') else tk, exchange_country=ex, name=str(g('name')).strip(), qty=num(g('quantity')), mv=num(g('market_value')), price=num(g('price')),
                  ccy=str(g('currency')).strip().upper()[:3])
         if p['mv'] is None and p['qty'] is not None and p['price'] is not None: p['mv'] = p['qty'] * p['price']; p['mvnote'] = 'value = quantity x price'
         out.append(p)
@@ -291,16 +311,17 @@ def analyze(pos, manual_fx=None, fetch_fx=True, normalize=True, maxdepth=6):
     manual_fx = {k.upper(): float(v) for k, v in (manual_fx or {}).items() if v not in (None, '')}
     agg = {}                    # seckey -> dict
     flags, cov, fxused, prows = [], {}, {}, []
-    def addsec(key, v, name, tkr, sec, cty, ac, ccy, via):
+    def addsec(key, v, name, tkr, sec, cty, ac, ccy, via, exc=''):
         a = agg.get(key)
         if not a:
-            a = agg[key] = dict(key=key, name=name or tkr or key, ticker=tkr, sector=nsec(sec), country=ncty(cty), asset_class=nac(ac), currency=(ccy or 'Unknown'), value_cad=0.0, direct_cad=0.0, via=Counter())
+            a = agg[key] = dict(key=key, name=name or tkr or key, ticker=tkr, exchange_country=exc, sector=nsec(sec), country=ncty(cty), asset_class=nac(ac), currency=(ccy or 'Unknown'), value_cad=0.0, direct_cad=0.0, via=Counter())
         else:
             if a['sector'] == 'Unknown' and sec: a['sector'] = nsec(sec)
             if a['country'] == 'Unknown' and cty: a['country'] = ncty(cty)
             if a['asset_class'] == 'Unknown' and ac: a['asset_class'] = nac(ac)
             if a['currency'] == 'Unknown' and ccy: a['currency'] = ccy
             if (not a['ticker']) and tkr: a['ticker'] = tkr
+            if (not a['exchange_country']) and exc: a['exchange_country'] = exc
         mm = IDX.secmeta.get(key)
         if mm:
             if a['sector'] in ('Unknown', 'Other') and mm[0]: a['sector'] = mm[0]
@@ -332,8 +353,8 @@ def analyze(pos, manual_fx=None, fetch_fx=True, normalize=True, maxdepth=6):
             if r[10].upper().startswith('CASH') or (r[3].upper().endswith(' CASH') and r[4].upper() in ('CAD', 'USD', 'EUR', 'GBP', 'JPY')) or r[3].strip().lower() in ('cash', 'cash & equivalents'):
                 ccy = r[11] if r[3].upper() in ('CASH', 'CASH & EQUIVALENTS') or not r[4] else r[4]
                 addsec('CASH:' + (ccy or 'UNK').upper(), sv, 'Cash (%s)' % (ccy or 'unknown ccy'), '', 'Cash', '', 'Cash', ccy, top); continue
-            k = IDX.seckey(r[3], r[4], r[5], r[6], r[9], r[11], r[10])
-            addsec(k, sv, r[3], r[4] if r[4] not in ('-',) else '', r[8], r[9], r[10], r[11], top)
+            k = IDX.seckey(r[3], r[4], r[5], r[6], r[9], r[11], r[10], rexc(r))
+            addsec(k, sv, r[3], r[4] if r[4] not in ('-',) else '', r[8], r[9], r[10], r[11], top, rexc(r))
         if part or tally < 0.995:
             rem = v * (1 - tally)
             if abs(rem) > 1e-9:
@@ -355,7 +376,7 @@ def analyze(pos, manual_fx=None, fetch_fx=True, normalize=True, maxdepth=6):
             s, hint = parse_symbol(p['symbol'])
             ccy = 'USD' if s.endswith('.U') else ('CAD' if (mkt == 'CA' or hint == 'CA') else ('USD' if (mkt == 'US' or hint == 'US' or kind == 'stock') else 'CAD'))
             assumed = 'currency not in file; assumed %s from listing' % ccy
-        pr = dict(symbol=p['symbol'], name=p['name'], quantity=p['qty'], market_value=p['mv'], currency=ccy, resolved_as=key or '', kind=kind, fx=None, fx_source='', value_cad=None, notes='; '.join(x for x in (note, assumed, p.get('mvnote', '')) if x))
+        pr = dict(symbol=p['symbol'], ticker=p.get('ticker', ''), exchange_country=p.get('exchange_country', ''), name=p['name'], quantity=p['qty'], market_value=p['mv'], currency=ccy, resolved_as=key or '', kind=kind, fx=None, fx_source='', value_cad=None, notes='; '.join(x for x in (note, assumed, p.get('mvnote', '')) if x))
         if p['mv'] is None:
             pr['notes'] = (pr['notes'] + '; ' if pr['notes'] else '') + 'NO MARKET VALUE (only quantity, no price) - excluded, map a value or price column'
             flags.append(dict(level='error', fund=p['symbol'], msg='%s has no market value - excluded (not guessed)' % p['symbol']))
@@ -378,7 +399,7 @@ def analyze(pos, manual_fx=None, fetch_fx=True, normalize=True, maxdepth=6):
         else:
             nm = p['name']
             if key.startswith('T:'): flags.append(dict(level='info', fund=p['symbol'], msg='%s: %s' % (p['symbol'], note)))
-            addsec(key, v, nm, parse_symbol(p['symbol'])[0], '', '', 'Equity' if not key.startswith('T:') else '', ccy if key.startswith('T:') else '', 'direct')
+            addsec(key, v, nm, p.get('ticker') or parse_symbol(p['symbol'])[0], '', '', 'Equity' if not key.startswith('T:') else '', ccy if key.startswith('T:') else '', 'direct', p.get('exchange_country', ''))
         prows.append(pr)
     # dedupe flags
     seen, fl = set(), []
@@ -406,8 +427,8 @@ def to_csv(rows, cols):
     return b.getvalue()
 
 EXPORTS = {
-    'securities': ['name', 'ticker', 'key', 'sector', 'country', 'asset_class', 'currency', 'value_cad', 'pct', 'direct_cad', 'via'],
-    'positions': ['symbol', 'name', 'quantity', 'market_value', 'currency', 'fx', 'fx_source', 'value_cad', 'kind', 'resolved_as', 'notes'],
+    'securities': ['name', 'ticker', 'exchange_country', 'key', 'sector', 'country', 'asset_class', 'currency', 'value_cad', 'pct', 'direct_cad', 'via'],
+    'positions': ['symbol', 'ticker', 'exchange_country', 'name', 'quantity', 'market_value', 'currency', 'fx', 'fx_source', 'value_cad', 'kind', 'resolved_as', 'notes'],
     'sector': ['bucket', 'value_cad', 'pct'], 'country': ['bucket', 'value_cad', 'pct'], 'asset_class': ['bucket', 'value_cad', 'pct'], 'currency': ['bucket', 'value_cad', 'pct'],
     'coverage': ['fund', 'issuer', 'source', 'as_of', 'n_holdings', 'raw_weight_sum', 'scope', 'partial', 'exposure_cad', 'url', 'reached_via'],
     'flags': ['level', 'fund', 'msg'],
@@ -425,7 +446,7 @@ def classify_row(r):
     if sub and sub != r[0] + ':' + r[1]: return 'fund', sub
     if r[10].upper().startswith('CASH') or (r[3].upper().endswith(' CASH') and r[4].upper() in ('CAD', 'USD', 'EUR', 'GBP', 'JPY')) or r[3].strip().lower() in ('cash', 'cash & equivalents'):
         return 'cash', r[11]
-    return 'sec', IDX.seckey(r[3], r[4], r[5], r[6], r[9], r[11], r[10])
+    return 'sec', IDX.seckey(r[3], r[4], r[5], r[6], r[9], r[11], r[10], rexc(r))
 
 class Vectors:
     """Look-through weight vector (fraction of NAV) per fund, built once in the background."""
@@ -452,8 +473,9 @@ class Vectors:
     def note(s, k, r):
         i = s.info.get(k)
         if i is None:
-            i = s.info[k] = dict(name=r[3], tk=set(), isin='', cusip='', sec='', cty='', ccy='', ac='')
+            i = s.info[k] = dict(name=r[3], tk=set(), exc=Counter(), isin='', cusip='', sec='', cty='', ccy='', ac='')
         if r[4] and r[4] not in ('-', 'N/A') and len(i['tk']) < 6: i['tk'].add(r[4].upper())
+        if rexc(r) and r[4]: i['exc'][rexc(r)] += 1
         if not i['isin'] and len(r[5]) == 12: i['isin'] = r[5]
         if not i['cusip'] and len(r[6]) == 9: i['cusip'] = r[6]
         for f, j in (('sec', 8), ('cty', 9), ('ccy', 11), ('ac', 10)):
@@ -530,6 +552,7 @@ def resolve_tickers(tk):
         else: errs.append('%s: %s' % (t, note or 'not an ETF with holdings in our index'))
     return res, errs
 
+def topexc(i): return i['exc'].most_common(1)[0][0] if i and i.get('exc') else ''
 def secname(k):
     i = VEC.info.get(k) if VEC else None
     return (i['name'] if i else k), (', '.join(sorted(i['tk'])) if i else '')
@@ -552,7 +575,7 @@ def overlap_report(tickers, weights=None):
     for k, c in keys.items():
         if c < 2: continue
         nm, tk = secname(k)
-        row = dict(security=nm, tickers=tk, key=k, match=keytype(k), n_funds=c)
+        row = dict(security=nm, tickers=tk, exchange_country=topexc(VEC.info.get(k)), key=k, match=keytype(k), n_funds=c)
         for fk in fks: row[fk] = round(100 * vs[fk].get(k, 0), 4)
         row['min_weight'] = round(min(100 * vs[fk].get(k, 0) for fk in fks), 4)
         common.append(row)
@@ -575,8 +598,11 @@ def lookup(q='', key=''):
         cands = set()
         ik = idkey(qq if len(qq) == 12 else '', qq if len(qq) == 9 else '')
         if ik and ik in VEC.info: cands.add(ik)
-        for k in VEC.tick.get(qq, ()): cands.add(k)
-        for k in VEC.tick.get(qq.replace('.', ' '), ()): cands.add(k)
+        nt, ne = parse_user_symbol(qq)          # 'TSLA US', 'RY.TO', 'RY CN', 'BRK/B' -> canonical ticker (+ listing country)
+        if True:
+            hits = set(VEC.tick.get(qq, ())) | set(VEC.tick.get(nt, ()))
+            if ne: hits = {k for k in hits if ne in VEC.info[k]['exc']} or hits
+            cands |= hits
         idc = [k for k in cands if k[:2] in ('C:', 'I:')]
         if not ik and len(idc) >= 1:
             best = max(idc, key=lambda k: len(VEC.inv.get(k, ())))
@@ -591,7 +617,7 @@ def lookup(q='', key=''):
         out = []
         for k in cands:
             i = VEC.info[k]; n = len(VEC.inv.get(k, ()))
-            out.append(dict(key=k, name=i['name'], tickers=', '.join(sorted(i['tk'])), isin=i['isin'], cusip=i['cusip'], country=ncty(i['cty']), asset_class=nac(i['ac']), match=keytype(k), n_funds=n))
+            out.append(dict(key=k, name=i['name'], tickers=', '.join(sorted(i['tk'])), exchange_country=topexc(i), isin=i['isin'], cusip=i['cusip'], country=ncty(i['cty']), asset_class=nac(i['ac']), match=keytype(k), n_funds=n))
         out.sort(key=lambda r: -r['n_funds'])
         if len(out) == 1 or (out and len(out) > 1 and ik and out[0]['key'] == ik): key = out[0]['key']
         else: return dict(candidates=out[:60])
@@ -605,7 +631,7 @@ def lookup(q='', key=''):
         d['note'] = ('leveraged/derivative fund (raw weights sum %.0f%%)' % rsum) if rsum > 115 else ('partial/top-N data' if d['partial'] else '')
         rows.append(d)
     rows.sort(key=lambda r: -r['weight_pct'])
-    return dict(security=dict(key=key, name=i['name'], tickers=', '.join(sorted(i['tk'])), isin=i['isin'], cusip=i['cusip'], match=keytype(key)),
+    return dict(security=dict(key=key, name=i['name'], tickers=', '.join(sorted(i['tk'])), exchange_country=topexc(i), isin=i['isin'], cusip=i['cusip'], match=keytype(key)),
                 funds=rows, n_CA=sum(1 for r in rows if r['market'] == 'CA'), n_US=sum(1 for r in rows if r['market'] == 'US'),
                 note='Weights are look-through % of each fund (fund-of-funds expanded). Share-class duplicates (.U/.F etc.) hidden. Partial/top-N funds only show disclosed positions.')
 
@@ -637,7 +663,7 @@ def research(market):
         out = []
         for k, x in src.most_common(100) if isinstance(src, Counter) else sorted(src.items(), key=lambda t: -t[1])[:100]:
             nm, tk = secname(k)
-            out.append(dict(security=nm, tickers=tk, key=k, match=keytype(k), n_etfs=cnt[k], aggregate_weight_pct=round(100 * agg[k], 2)))
+            out.append(dict(security=nm, tickers=tk, exchange_country=topexc(VEC.info.get(k)), key=k, match=keytype(k), n_etfs=cnt[k], aggregate_weight_pct=round(100 * agg[k], 2)))
         return out
     stats.sort(key=lambda r: -r['top10_pct'])
     r = dict(market=market, by_count=mk(cnt, 'count'), by_weight=mk(agg, 'weight'), stats=stats,
@@ -793,7 +819,7 @@ def xray(res, th=None):
                         note='trade = gap / purity (vehicle = your holding with the highest share of this class); first-order only, ignores side effects on other classes'))
     mq = Counter()
     for a in secs: mq[keytype(a['key']) if is_sec(a['key']) else ('cash' if a['key'].startswith('CASH:') else 'undisclosed / opaque fund')] += a['value_cad']
-    return dict(thresholds=t, top_companies=top, top_securities=[dict(rank=i + 1, security=a['name'], ticker=a['ticker'], key=a['key'], match=keytype(a['key']), sector=a['sector'], country=a['country'], value_cad=a['value_cad'], pct=a['pct']) for i, a in enumerate(real[:25])],
+    return dict(thresholds=t, top_companies=top, top_securities=[dict(rank=i + 1, security=a['name'], ticker=a['ticker'], exchange_country=a.get('exchange_country', ''), key=a['key'], match=keytype(a['key']), sector=a['sector'], country=a['country'], value_cad=a['value_cad'], pct=a['pct']) for i, a in enumerate(real[:25])],
                 alerts=alerts, us_share_pct=round(us, 2), banks=bank, banks_total_pct=round(bsum, 2), currency=ccy, currency_hedged=ccyh, hedged_funds=[dict(position=k, fund_name=v) for k, v in hedged_pos.items()],
                 overlap_matrix=matrix, overlap_cols=['fund'] + fks, overlap_pairs=pairs, overlap_warnings=owarn, targets=tgt, breaches=breaches, rebalance=reb,
                 match_quality=[dict(method=k, value_cad=v, pct=100 * v / tot) for k, v in mq.most_common()],

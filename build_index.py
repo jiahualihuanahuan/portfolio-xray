@@ -1,5 +1,7 @@
 """Build compact look-through index from scraped CSVs (latest snapshot per fund)."""
 import csv,glob,gzip,os,re,json,datetime,collections,sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from tickers import norm_ticker   # shared ticker normalizer (canonical ticker + exchange_country)
 csv.field_size_limit(10**8)
 CA='/workspace/cboe_etfs';US='/workspace/us_etfs';OUT='/workspace/lookthrough/app/data'
 MON={m:i+1 for i,m in enumerate('jan feb mar apr may jun jul aug sep oct nov dec'.split())}
@@ -93,7 +95,11 @@ for p in glob.glob(f'{US}/*/gaps.csv'):
 for u in U:
   if u['m']=='CA':u['gap']='' if ('CA',u['base']) in F else cag.get(u['base'],'no holdings scraped')
   else:u['gap']='; '.join(usg.get(u['ticker'],[]))[:400] if ('US',u['base']) not in F else '; '.join(usg.get(u['ticker'],[]))[:400]
-cols=['m','fund','lvl','name','tkr','isin','cusip','w','sec','cty','ac','ccy','ic']
+for x in H:   # standardize tickers: keep vendor original in ticker_raw
+  x['ticker_raw']=x.pop('tkr');x['ticker'],x['exchange_country']=norm_ticker(x['ticker_raw'],x['name'],x['cty'],x['ccy'],x['ac'])
+for x in S:
+  x['ticker_raw']=x.pop('tkr');x['ticker'],x['exchange_country']=norm_ticker(x['ticker_raw'],x['name'])
+cols=['m','fund','lvl','name','ticker','isin','cusip','w','sec','cty','ac','ccy','ic','ticker_raw','exchange_country']   # app reads columns by position
 for _f in glob.glob(f'{OUT}/holdings*.csv.gz'):os.remove(_f)
 PARTS=[]
 for _m in ('CA','US'):
@@ -101,7 +107,7 @@ for _m in ('CA','US'):
   with gzip.open(f'{OUT}/holdings_{_m}.csv.gz','wt',compresslevel=9,newline='') as g:
     w=csv.DictWriter(g,cols);w.writeheader();w.writerows(x for x in H if x['m']==_m)
 with gzip.open(f'{OUT}/snapshots_prior.csv.gz','wt',compresslevel=9,newline='') as g:
-  w=csv.DictWriter(g,['m','fund','asof','lt','name','tkr','isin','w']);w.writeheader();w.writerows(S)
+  w=csv.DictWriter(g,['m','fund','asof','lt','name','ticker','isin','w','ticker_raw','exchange_country']);w.writeheader();w.writerows(S)
 for k,v in F.items():v['latest_list_type']=LT.get(k,'')
 with open(f'{OUT}/funds.csv','w',newline='') as g:
   w=csv.DictWriter(g,list(next(iter(F.values())).keys()));w.writeheader();w.writerows(F.values())

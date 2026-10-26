@@ -36,7 +36,9 @@ Report flags can be combined; `--xlsx` writes one workbook with every table (plu
 Every table has CSV and XLSX export; each tab has "Export ALL (XLSX)".
 
 ## Matching method
-CUSIP (or CUSIP inside US/CA ISIN) → other ISIN → ticker mapped to the ID most often seen with it in the same region → exact normalized name mapped to an equity ID when that name maps to exactly one ID → normalized name only. Match quality is reported per portfolio (share of CAD by method) and per fund.
+CUSIP (or CUSIP inside US/CA ISIN) → other ISIN → ticker mapped to the ID most often seen with it on the same listing country (`exchange_country`), then in the same region → exact normalized name mapped to an equity ID when that name maps to exactly one ID → normalized name only. Match quality is reported per portfolio (share of CAD by method) and per fund.
+
+**Ticker standard.** Every holdings row (and uploaded portfolio symbol) goes through one function, `tickers.norm_ticker` (used by `build_index.py` and `app.py`): `ticker` = bare uppercase local symbol with share class after a dot (TSLA, RY, BRK.B, RCI.B, CAR.UN, 7203, 0700); vendor exchange suffixes (Bloomberg `TSLA US`, `RY CN`, `ALV GY`, `SAP.GY`, `X US EQUITY`; Yahoo `RY.TO`, `7203.T`, `0700.HK`; prefixes `TSX:`; `_SEK`; `-T`) are stripped into `exchange_country` (ISO-2; falls back to the row country, then currency, ignoring offshore domiciles like KY/BM). The vendor original is kept in `ticker_raw`. Preferred series (`MFC.PR.L`, `DLR.L`), `.UN` units and non-equity rows (bonds, cash, futures, options, swaps, FX: cleaned, no exchange) are not rewritten into equity tickers. "Who holds it?" accepts any of these forms (TSLA, TSLA US, RY.TO, RY CN, BRK/B, BRK B).
 
 ## Limits
 - Fees exist only for Canadian ETFs (Cboe list); US (mostly SEC N-PORT) has no MER, so no US cost comparisons.
