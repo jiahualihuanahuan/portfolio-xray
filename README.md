@@ -40,6 +40,12 @@ CUSIP (or CUSIP inside US/CA ISIN) → other ISIN → ticker mapped to the ID mo
 
 **Ticker standard.** Every holdings row (and uploaded portfolio symbol) goes through one function, `tickers.norm_ticker` (used by `build_index.py` and `app.py`): `ticker` = bare uppercase local symbol with share class after a dot (TSLA, RY, BRK.B, RCI.B, CAR.UN, 7203, 0700); vendor exchange suffixes (Bloomberg `TSLA US`, `RY CN`, `ALV GY`, `SAP.GY`, `X US EQUITY`; Yahoo `RY.TO`, `7203.T`, `0700.HK`; prefixes `TSX:`; `_SEK`; `-T`) are stripped into `exchange_country` (ISO-2; falls back to the row country, then currency, ignoring offshore domiciles like KY/BM). The vendor original is kept in `ticker_raw`. Preferred series (`MFC.PR.L`, `DLR.L`), `.UN` units and non-equity rows (bonds, cash, futures, options, swaps, FX: cleaned, no exchange) are not rewritten into equity tickers. "Who holds it?" accepts any of these forms (TSLA, TSLA US, RY.TO, RY CN, BRK/B, BRK B).
 
+
+
+## Hamilton multi-level look-through tab
+The web UI includes a **Hamilton look-through** tab that live-scrapes official holdings tables from hamiltonetfs.com for fund-of-funds such as HYLD (SMAX / QMAX / LMAX / EMAX / SDAY / QDAY / … → underlying equities such as NVDA / AAPL).  
+These tickers are currently gaps in the static index (Trackinsight 403). The tab shows level-1 holdings and the aggregated effective weights of the leaf securities (including cash leverage). Non-Hamilton ETFs (e.g. VOO, QQQM) are left as leaves.
+
 ## Limits
 - Fees exist only for Canadian ETFs (Cboe list); US (mostly SEC N-PORT) has no MER, so no US cost comparisons.
 - SEC N-PORT data are quarter-end snapshots (months old); partial/top-N funds show only disclosed weights (rest = "Undisclosed").
