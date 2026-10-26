@@ -42,7 +42,9 @@ CUSIP (or CUSIP inside US/CA ISIN) → other ISIN → ticker mapped to the ID mo
 
 
 
-## Hamilton multi-level look-through tab
+## ETF look-through tab
+The web UI includes an **ETF look-through** tab that works for any ticker. It uses the prebuilt holdings index (recursive fund-of-funds expansion down to individual stocks) for the large majority of Canadian and US ETFs. Hamilton funds that are gaps in the index (HYLD, SMAX, QMAX, etc.) fall back to a live scrape from hamiltonetfs.com. Other gaps show the reason holdings were not collected.
+
 The web UI includes a **Hamilton look-through** tab that live-scrapes official holdings tables from hamiltonetfs.com for fund-of-funds such as HYLD (SMAX / QMAX / LMAX / EMAX / SDAY / QDAY / … → underlying equities such as NVDA / AAPL).  
 These tickers are currently gaps in the static index (Trackinsight 403). The tab shows level-1 holdings and the aggregated effective weights of the leaf securities (including cash leverage). Non-Hamilton ETFs (e.g. VOO, QQQM) are left as leaves.
 

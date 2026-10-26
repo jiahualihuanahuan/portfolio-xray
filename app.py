@@ -307,6 +307,64 @@ def boc_rate(ccy, fetch=True):
         return None
 
 # ---------------- look-through ----------------
+
+def etf_lookthrough(ticker, maxdepth=6, normalize=True):
+    """Look through any ETF to individual holdings.
+    Prefers the prebuilt index (recursive fund-of-funds). Falls back to live Hamilton scrape for those gaps.
+    Returns {ticker, source, as_of, levels, leaf, flags, note}.
+    """
+    ticker = (ticker or '').upper().strip()
+    if not ticker:
+        return dict(error='ticker required')
+
+    # Try index first (CA then US)
+    kind, key, note = resolve_symbol(ticker, '')
+    flags = []
+    if kind == 'fund' and IDX.fund_has(key):
+        # Build a tiny portfolio of 100 CAD of this fund and run the existing explode
+        pos = [dict(symbol=ticker, ticker=ticker, name=ticker, qty=1, mv=100.0, price=100.0, ccy='CAD')]
+        res = analyze(pos, normalize=normalize, maxdepth=maxdepth)
+        # Extract levels roughly from coverage + securities
+        levels = {}
+        # Level 1 = direct holdings of the fund
+        info = IDX.funds[key]
+        rows = IDX.rows.get(key, [])
+        l1 = []
+        for r in rows:
+            try: w = float(r[7])
+            except: continue
+            sub = resolve_fund_row(r, key.split(':')[0])
+            l1.append(dict(ticker=r[4] or None, name=r[3], weight=w, is_fund=bool(sub and IDX.fund_has(sub))))
+        levels[1] = sorted(l1, key=lambda x: -abs(x['weight']))[:200]
+        # Leaf = securities after full recursion
+        leaf = []
+        for s in res.get('securities', []):
+            if s['key'].startswith(('CASH:', 'UNDISCLOSED:', 'FUND:', 'RESIDUAL:')): continue
+            leaf.append(dict(ticker=s.get('ticker'), name=s.get('name'), effective_weight=round(s.get('pct', 0), 2),
+                             sector=s.get('sector'), country=s.get('country')))
+        leaf = sorted(leaf, key=lambda x: -abs(x['effective_weight']))
+        return dict(ticker=ticker, resolved_as=key, source=info.get('source'), as_of=info.get('asof'),
+                    url=info.get('url'), levels=levels, leaf=leaf[:500], flags=res.get('flags', []),
+                    note='Recursive look-through from prebuilt index (maxdepth=%d). effective_weight is %% of the ETF.' % maxdepth,
+                    method='index')
+
+    # Hamilton live fallback
+    try:
+        import hamilton_lookthrough
+        if hamilton_lookthrough._is_hamilton_fund(ticker) or (kind == 'fundgap' and 'Hamilton' in (note or '')):
+            res = hamilton_lookthrough.see_through(ticker, max_depth=maxdepth)
+            res['method'] = 'hamilton_live'
+            res['resolved_as'] = key
+            return res
+    except Exception as e:
+        flags.append('Hamilton fallback failed: ' + str(e))
+
+    # Nothing available
+    gap = note or 'no holdings in index'
+    return dict(ticker=ticker, error='No holdings available for %s (%s)' % (ticker, gap),
+                resolved_as=key, flags=flags, method='none',
+                note='This ETF is in the universe but holdings were not collected. Index covers most iShares/Vanguard/BMO/etc. Hamilton gaps can be filled live.')
+
 def analyze(pos, manual_fx=None, fetch_fx=True, normalize=True, maxdepth=6):
     manual_fx = {k.upper(): float(v) for k, v in (manual_fx or {}).items() if v not in (None, '')}
     agg = {}                    # seckey -> dict
@@ -1117,19 +1175,18 @@ class H(BaseHTTPRequestHandler):
                 sn = snapshots()
                 return self.js(dict(r, stats=r['stats'][:lim] if lim else r['stats'], stats_total=len(r['stats']), snapshots=sn[:2000], snapshot_funds=len({x['fund'] for x in sn}),
                                     snapshot_note='Our index keeps the latest snapshot per fund. Only %d funds (all Canadian) also have an OLDER disclosure in the raw data, usually a different list type (e.g. quarterly top-25 vs current top-10), so changes are shown only for holdings present in both and are indicative. No multi-snapshot history exists for US/SEC funds, so change tracking is omitted there.' % len({x['fund'] for x in sn})))
-            if u.path == '/api/hamilton':
+            if u.path in ('/api/hamilton', '/api/lookthrough'):
                 ticker = (q.get('ticker') or 'HYLD').upper().strip()
                 try:
-                    depth = int(q.get('depth') or 3)
+                    depth = int(q.get('depth') or 6)
                 except ValueError:
-                    depth = 3
-                depth = max(1, min(depth, 5))
+                    depth = 6
+                depth = max(1, min(depth, 6))
                 try:
-                    import hamilton_lookthrough
-                    res = hamilton_lookthrough.see_through(ticker, max_depth=depth)
+                    res = etf_lookthrough(ticker, maxdepth=depth)
                     return self.js(res)
                 except Exception as e:
-                    return self.js(dict(error='Hamilton look-through failed: ' + str(e)))
+                    return self.js(dict(error='Look-through failed: ' + str(e)))
         except Exception as e:
             import traceback; traceback.print_exc(); return self.send(400, json.dumps(dict(error=str(e))))
         self.send(404, '{}')
