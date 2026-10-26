@@ -35,11 +35,17 @@ input,select{padding:6px 8px;border:1px solid #cfd5e3;border-radius:6px;font-siz
 <section class="tab" id="t_best"><div class="card"><h2>Best Canadian ETFs — rules-based screener</h2>
  <div class="row"><span class="muted">Score weights (blank = category default):</span> performance vs benchmark <input id="w_perf" size="3"> fees <input id="w_fee" size="3"> yield <input id="w_yld" size="3"> AUM <input id="w_aum" size="3"> track length <input id="w_track" size="3"> volatility <input id="w_vol" size="3"> consistency <input id="w_cons" size="3"> <button class="b" onclick="best()">Rank</button></div><div id="bmeth" class="muted"></div></div><div id="bout"></div></section>
 <section class="tab" id="t_research"><div class="card"><h2>Research & insights</h2><div class="row"><select id="rs_m"><option>CA</option><option>US</option></select> <button class="b" onclick="rs()">Load</button></div></div><div id="rout"></div></section>
+<section class="tab" id="t_hamilton">
+<div class="card"><h2>Hamilton ETF multi-level look-through</h2>
+<div class="muted">Live scrape from hamiltonetfs.com for fund-of-funds such as HYLD (SMAX / QMAX / SDAY / … → NVDA / AAPL / …). These tickers are currently gaps in the static holdings index. Effective weights include cash leverage. Non-Hamilton ETFs (VOO, QQQM, …) are left as leaves.</div>
+<div class="row">Ticker <input id="hm_t" size="10" value="HYLD" placeholder="HYLD, SMAX, QMAX, SDAY…"> max depth <input id="hm_d" size="3" value="3"> <button class="b" onclick="hamilton()">See through</button></div>
+</div>
+<div id="hout"></div></section>
 <section class="tab" id="t_method"><div class="card"><h2>Method, sources & coverage</h2><div id="mout"></div></div></section>
 </main>
 <script>
 const $=id=>document.getElementById(id);let FILE=null,PARSE=null,RES=null,META=null;const T={};let TID=0;
-const TABS=[['xray','Portfolio X-ray'],['targets','Targets & rebalancing'],['overlap','Overlap finder'],['lookup','Who holds it?'],['equiv','CA ↔ US'],['best','Best Canadian ETFs'],['research','Research'],['method','Method & sources']];
+const TABS=[['xray','Portfolio X-ray'],['targets','Targets & rebalancing'],['overlap','Overlap finder'],['lookup','Who holds it?'],['equiv','CA ↔ US'],['hamilton','Hamilton look-through'],['best','Best Canadian ETFs'],['research','Research'],['method','Method & sources']];
 $('nav').innerHTML=TABS.map(([k,v])=>`<button id="nb_${k}" onclick="tab('${k}')">${v}</button>`).join('');
 function tab(k){for(const [x] of TABS){$('t_'+x).classList.toggle('on',x==k);$('nb_'+x).classList.toggle('on',x==k)}if(k=='best'&&!$('bout').innerHTML)best();if(k=='research'&&!$('rout').innerHTML)rs()}tab('xray');
 const fmt=(x,d=2)=>x==null||x===''?'n/a':(typeof x=='number'?x.toLocaleString(undefined,{maximumFractionDigits:d,minimumFractionDigits:0}):x);
@@ -104,6 +110,33 @@ function best(){const q=['perf','fee','yld','aum','track','vol','cons'].map(k=>k
 function rs(){get('/api/research?market='+$('rs_m').value,'rout').then(j=>{$('rout').innerHTML=`<div class=card><button class=s onclick="allx('rout','research_${j.market}')">Export ALL (XLSX)</button><div class=muted>${esc(j.note)}</div></div><div class=grid2><div class=card><h2>Most-owned by number of ETFs (${j.market})</h2>${tbl(j.by_count,['security','tickers','exchange_country','match','n_etfs','aggregate_weight_pct'],{name:'most_owned_count'})}</div><div class=card><h2>By aggregate weight (${j.market})</h2>${tbl(j.by_weight,['security','tickers','exchange_country','match','n_etfs','aggregate_weight_pct'],{name:'most_owned_weight'})}</div></div>
  <div class=card><h2>Concentration per fund (${j.stats_total} funds; first ${j.stats.length} by top-10 weight)</h2>${tbl(j.stats,['fund','name','issuer','source','as_of','partial','n_holdings','top10_pct','hhi','effective_n'],{name:'concentration'})}</div>
  <div class=card><h2>Snapshot changes</h2><div class=muted>${esc(j.snapshot_note)}</div>${tbl(j.snapshots,['fund','holding','prior_as_of','prior_list','prior_weight','current_as_of','current_list','current_weight','change_pp'],{name:'snapshot_changes',dec:3})}</div>`})}
+
+function hamilton(){
+  const t=($('hm_t').value||'HYLD').trim().toUpperCase();
+  const d=$('hm_d').value||3;
+  get('/api/hamilton?ticker='+encodeURIComponent(t)+'&depth='+d,'hout').then(j=>{
+    if(j.error){err('hout',j.error);return}
+    let h=`<div class=card><h2>${esc(j.ticker)} <span class=muted>${esc(j.as_of||'')}</span></h2>
+      <div class=muted>Raw published weight sum: ${j.raw_sum_root!=null?fmt(j.raw_sum_root,1):'n/a'} · <a href="${esc(j.url||'')}" target=_blank>hamiltonetfs.com</a></div>
+      <div class=muted>${esc(j.note||'')}</div>
+      <button class=s onclick="allx('hout','hamilton_${t}')">Export ALL (XLSX)</button></div>`;
+    if(j.levels&&j.levels[1]){
+      h+=`<div class=card><h3>Level 1 — direct holdings</h3>${tbl(j.levels[1],['ticker','name','weight','effective_weight','is_fund'],{name:'level1'})}</div>`;
+    }
+    if(j.levels&&j.levels[2]){
+      h+=`<div class=card><h3>Level 2</h3>${tbl(j.levels[2],['ticker','name','weight','effective_weight','is_fund'],{name:'level2',max:300})}</div>`;
+    }
+    if(j.leaf){
+      h+=`<div class=card><h3>Underlying holdings (effective weight in ${esc(j.ticker)})</h3>
+        <div class=muted>Aggregated across all paths. Negative = cash borrow / written options. Sort by absolute weight.</div>
+        ${tbl(j.leaf,['ticker','name','effective_weight'],{name:'leaf',max:500})}</div>`;
+    }
+    if(j.flags&&j.flags.length){
+      h+=`<div class=card><h3>Notes / flags</h3>${j.flags.map(f=>`<div class=alert>${esc(f)}</div>`).join('')}</div>`;
+    }
+    $('hout').innerHTML=h;
+  });
+}
 function method(){$('mout').innerHTML=`<p><b>Sources.</b> Canadian ETFs: issuer websites/files (labelled per fund), Cboe Canada for fund metadata, MER, returns and AUM (Best Canadian ETFs tab). US ETFs: issuer sites where allowed, otherwise SEC EDGAR N-PORT quarter-end filings (not daily; “as of” date shown on every row). FX: Bank of Canada Valet latest rate, or your manual rate.</p>
 <p><b>Security matching across funds:</b> 1) CUSIP (or the CUSIP embedded in US/CA ISINs), 2) other ISIN, 3) canonical ticker (vendor suffixes like ‘TSLA US’, ‘RY CN’, ‘RY.TO’ stripped; share class as BRK.B) mapped to the ID most often seen with it on the same listing country (exchange_country), 4) exact normalized name mapped to an equity ID when that name maps to exactly one ID in the whole index, else 5) normalized name only. Match quality is reported per portfolio and per fund (“match” columns).</p>
 <p><b>Fund-of-funds</b> are expanded recursively (XEQT → XTOT → ITOT…). Partial/top-N funds contribute only disclosed weights; the rest is “Undisclosed”. Full-coverage funds are normalized to 100% (tiny rounding gaps kept as a “residual” line so totals reconcile to the cent).</p>

@@ -1117,6 +1117,19 @@ class H(BaseHTTPRequestHandler):
                 sn = snapshots()
                 return self.js(dict(r, stats=r['stats'][:lim] if lim else r['stats'], stats_total=len(r['stats']), snapshots=sn[:2000], snapshot_funds=len({x['fund'] for x in sn}),
                                     snapshot_note='Our index keeps the latest snapshot per fund. Only %d funds (all Canadian) also have an OLDER disclosure in the raw data, usually a different list type (e.g. quarterly top-25 vs current top-10), so changes are shown only for holdings present in both and are indicative. No multi-snapshot history exists for US/SEC funds, so change tracking is omitted there.' % len({x['fund'] for x in sn})))
+            if u.path == '/api/hamilton':
+                ticker = (q.get('ticker') or 'HYLD').upper().strip()
+                try:
+                    depth = int(q.get('depth') or 3)
+                except ValueError:
+                    depth = 3
+                depth = max(1, min(depth, 5))
+                try:
+                    import hamilton_lookthrough
+                    res = hamilton_lookthrough.see_through(ticker, max_depth=depth)
+                    return self.js(res)
+                except Exception as e:
+                    return self.js(dict(error='Hamilton look-through failed: ' + str(e)))
         except Exception as e:
             import traceback; traceback.print_exc(); return self.send(400, json.dumps(dict(error=str(e))))
         self.send(404, '{}')
